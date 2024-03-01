@@ -18,7 +18,8 @@ signal CntOut : std_logic_vector(2 downto 0); -- Sennal de salida del Contador y
 signal MuxOut : std_logic_vector(3 downto 0); -- Sennal de salida del Multiplexor
 
 begin
-  -- Proceso del multiplexor
+
+
   process (RDOut, CntOut) -- Proceso del Mux o Multiplexor
   -- Declaracion de variables en el Mux
   variable I0, I1, I2, I3, I4, I5, I6, I7 : std_logic_vector(3 downto 0);
@@ -33,32 +34,35 @@ begin
     I6 := RDOut(27 downto 24);
     I7 := RDOut(31 downto 28);
     -- Una vez dividida la entrada en 4 bits, leemos el selector y asignamos la salida:
-    if(CntOut = "000") then
+    case CntOut is
+      when "000" =>
       -- El selector vale 0, por tanto, redirigmos a la salida el valor de I0
-      MuxOut <= I0;
-    elsif(CntOut = "001") then
-      -- El selector vale 1, por tanto, redirigimos a la salida el valor I1
-      MuxOut <= I1;
-    elsif(CntOut = "010") then
-      -- El selector vale 2, por tanto, redirigimos a la salida el valor I2
-      MuxOut <= I2;
-    elsif(CntOut = "011") then
-      -- El selector vale 3, por tanto, redirigimos a la salida el valor I3
-      MuxOut <= I3;
-    elsif(CntOut = "100") then
-      -- El selector vale 4, por tanto, redirigmos a la salida el valor I4
-      MuxOut <= I4;
-    elsif(CntOut = "101") then
-      -- El selector vale 5, por tanto, redirigimos a la salida el valor I5
-      MuxOut <= I5;
-    elsif(CntOut = "110") then
-      -- El selector vale 6, por tanto, redirigimos a la salida el valor I6
-      MuxOut <= I6;
-    else
-      -- El selector vale 7, por tanto, redirigimos a la salida el valor I7
-      MuxOut <= I7;
-    end if;
-  end process
+        MuxOut <= I0;
+      when "001" =>
+      -- El selector vale 1, por tanto, redirigmos a la salida el valor de I0
+        MuxOut <= I1;
+      when "010" =>
+      -- El selector vale 2, por tanto, redirigmos a la salida el valor de I0
+        MuxOut <= I2;
+      when "011" =>
+      -- El selector vale 3, por tanto, redirigmos a la salida el valor de I0
+        MuxOut <= I3;
+      when "100" =>
+      -- El selector vale 4, por tanto, redirigmos a la salida el valor de I0
+        MuxOut <= I4;
+      when "101" =>
+      -- El selector vale 5, por tanto, redirigmos a la salida el valor de I0
+        MuxOut <= I5;
+      when "110" =>
+      -- El selector vale 6, por tanto, redirigmos a la salida el valor de I0
+        MuxOut <= I6;
+      when "111" =>
+      -- El selector vale 7, por tanto, redirigmos a la salida el valor de I0
+        MuxOut <= I7;
+      when others => MuxOut <= 0;
+    end case;
+  end process;
+
 
 
 
