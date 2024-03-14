@@ -21,7 +21,9 @@ architecture rtl of display_controller is
   signal   reg_desp: std_logic_vector(31 downto 0);
   signal   cont_out: unsigned (2 downto 0);
   signal   multiplexor_out: std_logic_vector(3 downto 0);
-
+  signal   dec_hexTo7_out: std_logic_vector(6 downto 0);
+  signal   cc_out: std_logic;
+  signal   dec_3To8_out :std_logic_vector(7 downto 0);
     
 begin  
 
@@ -96,75 +98,105 @@ decodificadorHexTo7: process(multiplexor_out)
     begin  
         case multiplexor_out is
            when x"0" =>
-                SEG_AG <= "0000001";
+                dec_hexTo7_out <= "0000001";
             when x"1" =>
-                SEG_AG <= "1001111";
+                dec_hexTo7_out <= "1001111";
             when x"2" =>
-                SEG_AG <= "0010010";
+                dec_hexTo7_out <= "0010010";
             when x"3" =>
-                SEG_AG <= "0000110";
+                dec_hexTo7_out <= "0000110";
             when x"4" =>
-                SEG_AG <= "1001100";
+                dec_hexTo7_out <= "1001100";
             when x"5" =>
-                SEG_AG <= "0100100";
+                dec_hexTo7_out <= "0100100";
             when x"6" =>
-                SEG_AG <= "0100000";
+                dec_hexTo7_out <= "0100000";
             when x"7" =>
-                SEG_AG <= "0001111";
+                dec_hexTo7_out <= "0001111";
             when x"8" =>
-                SEG_AG <= "0000000";
+                dec_hexTo7_out <= "0000000";
             when x"9" =>
-                SEG_AG <= "0000100";
+                dec_hexTo7_out <= "0000100";
             when x"A" =>
-                SEG_AG <= "0001000";
+                dec_hexTo7_out <= "0001000";
             when x"B" =>
-                SEG_AG <= "1100000";
+                dec_hexTo7_out <= "1100000";
             when x"C" =>
-                SEG_AG <= "0110001";
+                dec_hexTo7_out <= "0110001";
             when x"D" =>
-                SEG_AG <= "1000010";
+                dec_hexTo7_out <= "1000010";
             when x"E" =>
-                SEG_AG <= "0110000";
+                dec_hexTo7_out <= "0110000";
             when x"F" =>
-                SEG_AG <= "0111000";
+                dec_hexTo7_out <= "0111000";
             when others =>
-                SEG_AG <= "1111111";
+                dec_hexTo7_out <= "1111111";
         end case;
     end process;
 decodificador3a8:process(cont_out)
     begin
         case cont_out is
             when "000"=>
-                AND_70 <= "00000001";
+                dec_3To8_out <= "00000001";
             when "001"=>
-                AND_70 <= "00000010";
+                dec_3To8_out <= "00000010";
             when "010"=>
-                AND_70 <= "00000100";
+                dec_3To8_out <= "00000100";
             when "011"=>
-                AND_70 <= "00001000";
+                dec_3To8_out <= "00001000";
             when "100"=>
-                AND_70 <= "00010000";
+                dec_3To8_out <= "00010000";
             when "101"=>
-                AND_70 <= "00100000";
+                dec_3To8_out <= "00100000";
             when "110"=>
-                AND_70 <= "01000000";
+                dec_3To8_out <= "01000000";
             when "111"=>
-                AND_70 <= "10000000";
+                dec_3To8_out <= "10000000";
             when others =>
-                AND_70 <= "00000000"; 
+                dec_3To8_out <= "00000000"; 
         end case;
 end process;
 
-  DP<= '1' when cont_out rem=0 else'0';
+cc_out<= '1' when cont_out rem 2=0 else'0';
 
-circuitoCombinacional:process(cont_out)
+
+process (CLK, RST) --Register SEG_AG
     begin
-        if cont_out rem 2= 0 then
-            DP<='1';
-        else
-            DP<='0';
-        end if;
-    end process;
+    if RST = '1' then
+        SEG_AG <= "0000000";
+    elsif CLK'event and CLK = '1' then
+        SEG_AG <= dec_hexTo7_out; 
+    end if;
+end process;
+
+
+process (CLK, RST) --Register DP
+    begin
+    if RST = '1' then
+        DP <= '0';
+    elsif CLK'event and CLK = '1' then
+        DP <= CC_out; 
+    end if;
+end process;
+
+
+process (CLK, RST) --Register AND_70
+    begin
+    if RST = '1' then
+        AND_70 <= "00000000";
+    elsif CLK'event and CLK = '1' then
+        AND_70 <= dec_3To8_out; 
+    end if;
+end process;
+
+--circuitoCombinacional:process(cont_out)
+--    begin
+--        if cont_out rem 2= 0 then
+--            DP<='1';
+--        else
+--            DP<='0';
+--        end if;
+--    end process;
 end rtl;
 
 
