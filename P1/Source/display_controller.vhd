@@ -154,6 +154,9 @@ decodificador3a8:process(cont_out)
                 AND_70 <= "00000000"; 
         end case;
 end process;
+
+  DP<= '1' when cont_out rem=0 else'0';
+
 circuitoCombinacional:process(cont_out)
     begin
         if cont_out rem 2= 0 then
