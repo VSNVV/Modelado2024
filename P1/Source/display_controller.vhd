@@ -14,9 +14,9 @@ end display_controller;
 
 architecture rtl of display_controller is
 
-  constant CLKDIV      : integer := 5e6;   -- para la implementación
---  constant CLKDIV      : integer := 25;  -- para la simulación
-  signal   counter_reg : integer range 0 to CLKDIV-1;
+  --constant CTE_ANDS      : integer := 100000;   -- para la implementación
+  constant CTE_ANDS      : integer := 200;  -- para la simulación
+  signal   counter_reg : integer range 0 to CTE_ANDS-1;
   signal   prescaler_out :std_logic;
   signal   reg_desp: std_logic_vector(31 downto 0);
   signal   cont_out: unsigned (2 downto 0);
@@ -32,7 +32,7 @@ prescaler:  process (CLK, RST)
         if rst = '1' then
             counter_reg   <= 0;
         elsif clk'event and clk = '1' then
-            if counter_reg = CLKDIV-1 then
+            if counter_reg = CTE_ANDS-1 then
                 counter_reg <= 0;
             else
             counter_reg <= counter_reg+1;
@@ -45,7 +45,7 @@ cont_presscaler:  process (CLK, RST)
         if rst = '1' then
             prescaler_out   <= '0';
         elsif clk'event and clk = '1' then
-            if counter_reg = CLKDIV-1 then
+            if counter_reg = CTE_ANDS-1 then
                 prescaler_out <= '1';
             else
                 prescaler_out <= '0';
@@ -66,7 +66,7 @@ registro_desp: process(CLK, RST) --registro desplazamiento
 contador0a7 :process(prescaler_out)
     begin
         if cont_out = "111" then
-            cont_out<="0";
+            cont_out<="000";
         elsif (prescaler_out='1') then
             cont_out<=cont_out+1;
         end if;
@@ -91,6 +91,8 @@ multiplexor8a1 : process(cont_out,reg_desp)
                 multiplexor_out <=reg_desp(27 downto 24);
             when "111" => 
                 multiplexor_out <=reg_desp(31 downto 28);
+            when others => 
+            multiplexor_out <=reg_desp(31 downto 28);
         end case;
     end process;
 

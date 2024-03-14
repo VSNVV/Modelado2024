@@ -1,0 +1,5 @@
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+Failure: FIN CONTROLADO DE LA SIMULACION
+Time: 260000730 ns  Iteration: 0  Process: /display_controller_tb/line__45  File: C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/P1/Source/display_controller_tb.vhd
+$finish called at time : 260000730 ns : File "C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/P1/Source/display_controller_tb.vhd" Line 112

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Thu Mar 14 17:50:41 2024
+# Process ID: 23696
+# Current directory: C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/P1/Project_1/P1.runs/synth_1
+# Command line: vivado.exe -log display_controller.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source display_controller.tcl
+# Log file: C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/P1/Project_1/P1.runs/synth_1/display_controller.vds
+# Journal file: C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/P1/Project_1/P1.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source display_controller.tcl -notrace
