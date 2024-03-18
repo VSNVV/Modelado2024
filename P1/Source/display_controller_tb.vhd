@@ -12,7 +12,7 @@ end display_controller_tb;
 -------------------------------------------------------------------------------
 
 architecture sim of display_controller_tb is
-  constant CNT1         : time      :=100000*8*10ns;  --completar
+  constant CNT1         : time      :=(4*50)*8*10ns;  --completar
   signal   RST_i        : std_logic := '1';
   signal   CLK_i        : std_logic := '0';
   signal   DATO_RX_OK_i : std_logic;
