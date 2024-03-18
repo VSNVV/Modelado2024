@@ -63,14 +63,19 @@ registro_desp: process(CLK, RST) --registro desplazamiento
         end if;
     end process;
  
-contador0a7 :process(prescaler_out)
+contador0a7 :process(prescaler_out,CLK,RST)
     begin
-        if cont_out = "111" then
-            cont_out<="000";
-        elsif (prescaler_out='1') then
-            cont_out<=cont_out+1;
+        if rst = '1' then
+            cont_out   <= "000";
+        elsif clk'event and clk = '1' then
+            if cont_out = "111" then
+                cont_out<="000";
+            else
+                cont_out<=cont_out+1;
+            end if;
         end if;
     end process;
+       
  
 multiplexor8a1 : process(cont_out,reg_desp)
     begin
@@ -139,27 +144,27 @@ decodificador3a8:process(cont_out)
     begin
         case cont_out is
             when "000"=>
-                dec_3To8_out <= "00000001";
+                dec_3To8_out <= "11111110";
             when "001"=>
-                dec_3To8_out <= "00000010";
+                dec_3To8_out <= "11111101";
             when "010"=>
-                dec_3To8_out <= "00000100";
+                dec_3To8_out <= "11111011";
             when "011"=>
-                dec_3To8_out <= "00001000";
+                dec_3To8_out <= "11110111";
             when "100"=>
-                dec_3To8_out <= "00010000";
+                dec_3To8_out <= "11101111";
             when "101"=>
-                dec_3To8_out <= "00100000";
+                dec_3To8_out <= "11011111";
             when "110"=>
-                dec_3To8_out <= "01000000";
+                dec_3To8_out <= "10111111";
             when "111"=>
-                dec_3To8_out <= "10000000";
+                dec_3To8_out <= "01111111";
             when others =>
-                dec_3To8_out <= "00000000"; 
+                dec_3To8_out <= "11111111"; 
         end case;
 end process;
 
-cc_out<= '1' when cont_out rem 2=0 else'0';
+
 
 
 process (CLK, RST) --Register SEG_AG
@@ -191,14 +196,15 @@ process (CLK, RST) --Register AND_70
     end if;
 end process;
 
---circuitoCombinacional:process(cont_out)
---    begin
---        if cont_out rem 2= 0 then
---            DP<='1';
---        else
---            DP<='0';
---        end if;
---    end process;
+--cc_out<= '1' when cont_out rem 2=0 else'0';
+circuitoCombinacional:process(cont_out)
+    begin
+        if cont_out rem 2= 0 then
+            cc_out<='1';
+        else
+            cc_out<='0';
+        end if;
+    end process;
 end rtl;
 
 
