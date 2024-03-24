@@ -18,9 +18,9 @@ end spi_controller;
 architecture rtl of spi_controller is
 -- Declaracion de Sennales
 signal RegOut : std_logic_vector(7 downto 0); -- Sennal que sale del Registro hacia el Multiplexor
-signal MuxOut : std_logic;
-
-
+signal MuxOut : std_logic; -- Sennal de salida del Multiplexor
+signal CntOut : unsigned(3 downto 0); -- Sennal de salida del Contador
+signal Busy : std_logic; -- Sennal que indica si el sistema ocupado enviando un dato
 
 begin
   process(DATA_SPI, DATA_SPI_OK, CLK) -- Prcoeso del Registro (creo que es un biestable D)
@@ -40,21 +40,21 @@ begin
   begin
     -- De acuerdo al selector, tenemos que seleccionar el bit correspondiente de RegOut
     case CntOut is
-      when "000" =>
+      when "0001" =>
         MuxOut <= RegOut(0);
-      when "001" =>
+      when "0010" =>
         MuxOut <= RegOut(1);
-      when "010" =>
+      when "0011" =>
         MuxOut <= RegOut(2);
-      when "011" =>
+      when "0100" =>
         MuxOut <= RegOut(3);
-      when "100" =>
+      when "0101" =>
         MuxOut <= RegOut(4);
-      when "101" =>
+      when "0110" =>
         MuxOut <= RegOut(5);
-      when "110" =>
+      when "0111" =>
         MuxOut <= RegOut(6);
-      when "111" =>
+      when "1000" =>
         MuxOut <= RegOut(7);
       when others =>
         MuxOut <= '0';
@@ -67,10 +67,25 @@ begin
       SDIN <= '0';
     elsif CLK'event and CLK = '1' then
       SDIN <= MuxOut;
-      
-
-
-  end process; 
+    end if;
+  end process;
+  
+  process(Busy, CE, CLK, RST) -- Proceso del Contador (descendente de 8 a 0, siendo 0 el fin de cuenta)
+  begin
+    if RST = '1' then
+      -- Reiniciamos el Contador a su valor incial que en este caso es el 1
+      CntOut <= "1000";
+    elsif CLK'event and CLK = '1' then
+      -- FALTA EVALUAR EL CE, QUE NO SE QUE ES
+      if CntOut = "0000" then
+        -- Se verifica que estamos en el fin de cuenta, por tanto reinciamos al valor inicial
+        CntOut <= "1000"
+      else
+        -- Si no estamos en el fin de cuenta, decrementamos en una unidad la salida:
+        CntOut <= CntOut - 1;
+      end if;
+    end if;
+  end process;
 
 
 
