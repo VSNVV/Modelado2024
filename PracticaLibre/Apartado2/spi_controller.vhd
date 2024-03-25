@@ -21,6 +21,8 @@ signal RegOut : std_logic_vector(7 downto 0); -- Sennal que sale del Registro ha
 signal MuxOut : std_logic; -- Sennal de salida del Multiplexor
 signal CntOut : unsigned(3 downto 0); -- Sennal de salida del Contador
 signal Busy : std_logic; -- Sennal que indica si el sistema ocupado enviando un dato
+signal CE : std_logic; -- Sennal Clock Enable que sale del circuito combinacional del prescaler
+signal FC : std_logic; -- Sennal de salida el Prescaler
 
 begin
   process(DATA_SPI, DATA_SPI_OK, CLK) -- Prcoeso del Registro (creo que es un biestable D)
@@ -86,6 +88,14 @@ begin
       end if;
     end if;
   end process;
+
+  process(FC, Busy, CLK, RST) -- Proceso que modela el Biestable T (Circuito secuencial a la salida del prescaler)
+  begin
+    -- Cuando entienda que pollas hace la parte de abajo del diagrama se pueden hacer cosas
+
+
+  end process;
+
 
 
 
