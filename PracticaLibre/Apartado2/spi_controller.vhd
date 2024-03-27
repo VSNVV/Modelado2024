@@ -16,13 +16,20 @@ entity spi_controller is
 end spi_controller;
 
 architecture rtl of spi_controller is
+-- Declaracion de Constantes
+-- constant CTE_ANDS      : integer := 100000;   -- para la implementacion
+-- constant CTE_ANDS  : integer := 200;  -- para la simulacion
+constant N1 : integer := 28; -- Constante del Prescaler
 -- Declaracion de Sennales
 signal RegOut : std_logic_vector(7 downto 0); -- Sennal que sale del Registro hacia el Multiplexor
 signal MuxOut : std_logic; -- Sennal de salida del Multiplexor
 signal CntOut : unsigned(3 downto 0); -- Sennal de salida del Contador
-signal Busy : std_logic; -- Sennal que indica si el sistema ocupado enviando un dato
-signal CE : std_logic; -- Sennal Clock Enable que sale del circuito combinacional del prescaler
-signal FC : std_logic; -- Sennal de salida el Prescaler
+signal BUSY   : std_logic; -- Sennal que indica si el sistema ocupado enviando un dato
+signal CE     : std_logic; -- Sennal Clock Enable que sale del circuito combinacional del prescaler
+signal FC     : std_logic; -- Sennal de salida el Prescaler
+signal ultFC  : std:logic; -- Sennal auxiliar de FC
+signal CntReg : integer range 0 to N1 - 1; -- Sennal del contador asociado del Prescaler
+signal SCLK   : std:logic; -- Sennal SCLK
 
 begin
   process(DATA_SPI, DATA_SPI_OK, CLK) -- Prcoeso del Registro (creo que es un biestable D)
@@ -72,13 +79,12 @@ begin
     end if;
   end process;
   
-  process(Busy, CE, CLK, RST) -- Proceso del Contador (descendente de 8 a 0, siendo 0 el fin de cuenta)
+  process(BUSY, CE, CLK, RST) -- Proceso del Contador (descendente de 8 a 0, siendo 0 el fin de cuenta)
   begin
     if RST = '1' then
       -- Reiniciamos el Contador a su valor incial que en este caso es el 1
       CntOut <= "1000";
-    elsif CLK'event and CLK = '1' then
-      -- FALTA EVALUAR EL CE, QUE NO SE QUE ES
+    elsif (CLK'event and CLK = '1') and (CE = '1') then
       if CntOut = "0000" then
         -- Se verifica que estamos en el fin de cuenta, por tanto reinciamos al valor inicial
         CntOut <= "1000"
@@ -89,17 +95,64 @@ begin
     end if;
   end process;
 
-  process(FC, Busy, CLK, RST) -- Proceso que modela el Biestable T (Circuito secuencial a la salida del prescaler)
+  process(BUSY, CLK, RST) -- Proceso que modela el Prescaler, nuestro valor de N1 es 28
   begin
-    -- Cuando entienda que pollas hace la parte de abajo del diagrama se pueden hacer cosas
-
-
+    if RST = '1' then
+      CntReg <= 0;
+    elsif (CLK'event and CLK = '1') and (BUSY = '1') then
+      -- Se verifica que hay sennal de reloj y que el sistema esta transmitiendo un dato
+      if CntReg = N1 - 1 then
+        -- Verificamos que se ha llegado a fin de cuenta
+        CntReg <= 0;
+        FC <= '1';
+      else
+        -- Verificamos que no se ha llegado al fin de cuenta
+        CntReg <= CntReg + 1;
+        FC <= '0';
+      end if;
+    end if;
+    ultFC <= FC;
   end process;
 
+  process(FC, SCLK) -- Proceso que modela el circuito combinacional
+  begin
+    if FC = '1' and SCLK = '1' then
+      CE <= '1';
+    else
+      CE <= '0';
+    end if;
+  end process;
 
+  process(FC, BUSY, CLK, RST) -- Proceso que modela el circuito secuencial de salida del Prescaler
+  begin
+    -- Cuando entienda que pollas hace la parte de abajo del diagrama se pueden hacer cosas
+    if (RST = '1') then
+      SCLK <= '0';
+    elsif (CLK'event and CLK = '1') and (BUSY = '1') then
+      if FC = '0' and ultFC = '1' then
+        -- Se detecta flanco de bajada en FC
+        SCLK <= not SCLK;
+      end if;
+    end if;
+  end process;
 
+  process(DATA_SPI_OK, CE, CntOut, RST, CLK) -- Proceso del cirucito secuencial que define BUSY
+  begin
+    if RST = '1' then
+      BUSY <= '0';
+    elsif (CLK'event and CLK  = '1') and (CE = '1') then
+      if DATA_SPI_OK = '1' then
+        BUSY <= '1';
+      elsif CntOut = "0000" then
+        -- Fin de transmision
+        BUSY <= '0'
+      end if;
+    end if;
+  end process;
 
-
+  process(BUSY) -- Proceso del circuito combinacional que define CS
+  begin
+    CS <= not BUSY;
+  end process;
   
 end rtl;
-
