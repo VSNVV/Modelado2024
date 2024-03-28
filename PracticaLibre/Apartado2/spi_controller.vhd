@@ -17,8 +17,6 @@ end spi_controller;
 
 architecture rtl of spi_controller is
 -- Declaracion de Constantes
--- constant CTE_ANDS      : integer := 100000;   -- para la implementacion
--- constant CTE_ANDS  : integer := 200;  -- para la simulacion
 constant N1 : integer := 28; -- Constante del Prescaler
 -- Declaracion de Sennales
 signal RegOut : std_logic_vector(7 downto 0); -- Sennal que sale del Registro hacia el Multiplexor
@@ -39,7 +37,7 @@ begin
       D_C <= '0';
       RegOut <= "00000000";
     elsif (CLK'event and CLK = '1') and (DATA_SPI_OK = '1') then
-      -- Hacemos que el registro funcione, ya que ambas señales estan activas
+      -- Hacemos que el registro funcione, ya que ambas se?ales estan activas
       D_C <= DATA_SPI(8); -- Es el primer bit de la entrada DATA_SPI
       RegOut <= DATA_SPI(7 downto 0); -- Es el resto de bits de la entrada DATA_SPI
     end if;
@@ -86,15 +84,14 @@ begin
   process(BUSY, CE, CLK, RST) -- Proceso del Contador (descendente de 8 a 0, siendo 0 el fin de cuenta)
   begin
     if RST = '1' then
-      -- Reiniciamos el Contador a su valor incial que en este caso es el 1
       CntOut <= "1000";
-    elsif (CLK'event and CLK = '1')  and (BUSY = '1') then--and (CE = '1')
-      if CntOut = "0000" then
-        -- Se verifica que estamos en el fin de cuenta, por tanto reinciamos al valor inicial
-        CntOut <= "1000";
-      else
-        -- Si no estamos en el fin de cuenta, decrementamos en una unidad la salida:
-        CntOut <= CntOut - 1;
+    elsif CLK'event and CLK = '1' then
+      if (CE = '1') and (BUSY = '1') then
+        if CntOut = "0000" then
+          CntOut <= "1000";
+        else
+          CntOut <= CntOut - 1;
+        end if;
       end if;
     end if;
   end process;
@@ -118,42 +115,45 @@ begin
     ultFC <= FC;
   end process;
 
-  SCLK <= SCLK_Out;
-
   process(FC, SCLK_Out) -- Proceso que modela el circuito combinacional
   begin
-    if FC = '1' and SCLK_Out = '1' then
+    if (FC = '1') and (SCLK_Out = '1') then
       CE <= '1';
     else
       CE <= '0';
-    end if;
+    end if; 
   end process;
 
   process(FC, BUSY, CntOut, ultFC, CLK, RST) -- Proceso que modela el circuito secuencial de salida del Prescaler
   begin
-    -- Cuando entienda que pollas hace la parte de abajo del diagrama se pueden hacer cosas
-    if (RST = '1') then
+    if RST = '1' then
       SCLK_Out <= '1';
-    elsif (CLK'event and CLK = '1') and (CntOut /= "0000") then--(BUSY = '1') then
-      if FC = '0' and ultFC = '1' then
-        -- Se detecta flanco de bajada en FC
-        SCLK_Out <= not SCLK_Out
+    elsif CLK'event and CLK = '1' then
+      if BUSY = '1' then
+        if CntOut /= "0000" then
+          SCLK_Out <= not SCLK_Out;
+        end if;
       end if;
     end if;
-
   end process;
 
+  SCLK <= SCLK_Out;
+
   process(DATA_SPI_OK, CE, CntOut, RST, CLK) -- Proceso del cirucito secuencial que define BUSY
+  variable auxBusy : std_logic := '0';
   begin
     if RST = '1' then
       BUSY <= '0';
-    elsif (CLK'event and CLK  = '1') then--and (CE = '1') then
-      if DATA_SPI_OK = '1' or CntOut/="0000" then
-        BUSY <= '1';
-      elsif CntOut = "0000" then
-        -- Fin de transmision
-        BUSY <= '0';
+    elsif CLK'event and CLK = '1' then
+      if DATA_SPI_OK = '1' then
+        auxBusy := '1';
+        end if;
+      if CE = '1' then
+        if CntOut /= "0000" then
+          auxBusy := '1';
+        end if;
       end if;
+      BUSY <= auxBusy;
     end if;
   end process;
 
