@@ -46,7 +46,8 @@ begin  -- sim
       CS   => CS_i,
       SDIN => SDIN_i,
       SCLK => SCLK_i);
-
+      RST_i <= '0' after 100 ns;
+      CLK_i <= not CLK_i after 5ns;
 
   -- estímulos para CLK y RST
 
@@ -66,7 +67,7 @@ begin  -- sim
 
   begin  -- process
 
-    wait for ;--Completar
+    wait for 200ns;--Completar
     gen_dato('0'&x"12");--Completar
     gen_dato('1'&x"34");--Completar
     gen_dato('0'&x"56");--Completar

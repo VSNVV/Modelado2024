@@ -27,9 +27,9 @@ signal CntOut : unsigned(3 downto 0); -- Sennal de salida del Contador
 signal BUSY   : std_logic; -- Sennal que indica si el sistema ocupado enviando un dato
 signal CE     : std_logic; -- Sennal Clock Enable que sale del circuito combinacional del prescaler
 signal FC     : std_logic; -- Sennal de salida el Prescaler
-signal ultFC  : std:logic; -- Sennal auxiliar de FC
+signal ultFC  : std_logic; -- Sennal auxiliar de FC
 signal CntReg : integer range 0 to N1 - 1; -- Sennal del contador asociado del Prescaler
-signal SCLK   : std:logic; -- Sennal SCLK
+signal SCLK_Out   : std_logic; -- Sennal SCLK
 
 begin
   process(DATA_SPI, DATA_SPI_OK, CLK) -- Prcoeso del Registro (creo que es un biestable D)
@@ -88,7 +88,7 @@ begin
     if RST = '1' then
       -- Reiniciamos el Contador a su valor incial que en este caso es el 1
       CntOut <= "1000";
-    elsif (CLK'event and CLK = '1') and (CE = '1') and (BUSY = '1') then
+    elsif (CLK'event and CLK = '1')  and (BUSY = '1') then--and (CE = '1')
       if CntOut = "0000" then
         -- Se verifica que estamos en el fin de cuenta, por tanto reinciamos al valor inicial
         CntOut <= "1000";
@@ -118,24 +118,26 @@ begin
     ultFC <= FC;
   end process;
 
-  process(FC, SCLK) -- Proceso que modela el circuito combinacional
+  SCLK<=SCLK_Out;
+
+  process(FC, SCLK_Out) -- Proceso que modela el circuito combinacional
   begin
-    if FC = '1' and SCLK = '1' then
+    if FC = '1' and SCLK_Out = '1' then
       CE <= '1';
     else
       CE <= '0';
     end if;
   end process;
 
-  process(FC, BUSY, CLK, RST) -- Proceso que modela el circuito secuencial de salida del Prescaler
+  process(FC, BUSY, CLK, RST, ultFC) -- Proceso que modela el circuito secuencial de salida del Prescaler
   begin
     -- Cuando entienda que pollas hace la parte de abajo del diagrama se pueden hacer cosas
     if (RST = '1') then
-      SCLK <= '0';
+      SCLK_Out <= '0';
     elsif (CLK'event and CLK = '1') and (BUSY = '1') then
       if FC = '0' and ultFC = '1' then
         -- Se detecta flanco de bajada en FC
-        SCLK <= not SCLK;
+        SCLK_Out <= not SCLK_Out;
       end if;
     end if;
   end process;
@@ -144,12 +146,12 @@ begin
   begin
     if RST = '1' then
       BUSY <= '0';
-    elsif (CLK'event and CLK  = '1') and (CE = '1') then
-      if DATA_SPI_OK = '1' then
+    elsif (CLK'event and CLK  = '1') then--and (CE = '1') then
+      if DATA_SPI_OK = '1' or CntOut/="0000" then
         BUSY <= '1';
       elsif CntOut = "0000" then
         -- Fin de transmision
-        BUSY <= '0'
+        BUSY <= '0';
       end if;
     end if;
   end process;
