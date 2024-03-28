@@ -137,6 +137,7 @@ begin
     elsif (CLK'event and CLK = '1') and (CntOut /= "0000") then--(BUSY = '1') then
       if FC = '0' and ultFC = '1' then
         -- Se detecta flanco de bajada en FC
+        SCLK_Out <= not SCLK_Out
       end if;
     end if;
 
