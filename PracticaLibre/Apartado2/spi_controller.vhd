@@ -127,12 +127,12 @@ begin
   process(FC, BUSY, CntOut, ultFC, CLK, RST) -- Proceso que modela el circuito secuencial de salida del Prescaler
   begin
     if RST = '1' then
-      SCLK_Out <= '0';
+      SCLK_Out <= '1';
     elsif CLK'event and CLK = '0' then
       if BUSY = '1' and ultFC ='1' and FC ='0'then
-        if CntOut /= "0000" then
+        --if CntOut /= "0000" then
           SCLK_Out <= not SCLK_Out;
-        end if;
+        --end if;
       end if;
     end if;
   end process;
