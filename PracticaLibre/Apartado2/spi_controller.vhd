@@ -118,7 +118,7 @@ begin
     ultFC <= FC;
   end process;
 
-  SCLK<=SCLK_Out;
+  SCLK <= SCLK_Out;
 
   process(FC, SCLK_Out) -- Proceso que modela el circuito combinacional
   begin
@@ -129,17 +129,17 @@ begin
     end if;
   end process;
 
-  process(FC, BUSY, CLK, RST, ultFC) -- Proceso que modela el circuito secuencial de salida del Prescaler
+  process(FC, BUSY, CntOut, ultFC, CLK, RST) -- Proceso que modela el circuito secuencial de salida del Prescaler
   begin
     -- Cuando entienda que pollas hace la parte de abajo del diagrama se pueden hacer cosas
     if (RST = '1') then
-      SCLK_Out <= '0';
-    elsif (CLK'event and CLK = '1') and (BUSY = '1') then
+      SCLK_Out <= '1';
+    elsif (CLK'event and CLK = '1') and (CntOut /= "0000") then--(BUSY = '1') then
       if FC = '0' and ultFC = '1' then
         -- Se detecta flanco de bajada en FC
-        SCLK_Out <= not SCLK_Out;
       end if;
     end if;
+
   end process;
 
   process(DATA_SPI_OK, CE, CntOut, RST, CLK) -- Proceso del cirucito secuencial que define BUSY
