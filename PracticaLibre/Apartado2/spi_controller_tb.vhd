@@ -24,7 +24,7 @@ architecture sim of spi_controller_tb is
   signal   SDIN_i    : std_logic;
   signal   SCLK_i    : std_logic;
   signal   END_SPI_i : std_logic;
-  constant T_data    : time := 4760 ns; --Completar
+  constant T_data    : time := 7600 ns; --Completar
 begin  -- sim
 
   DUT : entity work.spi_controller
@@ -67,7 +67,7 @@ begin  -- sim
 
   begin  -- process
 
-    wait for 200ns;--Completar
+    wait for 2000ns;--Completar
     gen_dato('0'&x"12");--Completar
     gen_dato('1'&x"34");--Completar
     gen_dato('0'&x"56");--Completar
