@@ -130,9 +130,9 @@ begin
       SCLK_Out <= '1';
     elsif CLK'event and CLK = '1' then
       if BUSY = '1' then
-        if CntOut /= "0000" then
+        --if CntOut /= "0000" then
           SCLK_Out <= not SCLK_Out;
-        end if;
+        --end if;
       end if;
     end if;
   end process;
@@ -151,6 +151,8 @@ begin
       if CE = '1' then
         if CntOut /= "0000" then
           auxBusy := '1';
+        else
+          auxBusy := '0';
         end if;
       end if;
       BUSY <= auxBusy;
