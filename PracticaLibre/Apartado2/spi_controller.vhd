@@ -70,12 +70,16 @@ begin
     end case;
   end process;
 
-  process(MuxOut, CntOut, RST, CLK) -- Proceso del Biestable D
+  process(CLK, RST) -- Proceso del Biestable D
   begin
     if RST = '1' then
       SDIN <= '0';
-    elsif CLK'event and CLK = '1' then
-      SDIN <= MuxOut;
+    elsif (CLK'event and CLK = '1') then
+      if CntOut /= "0000" then
+        SDIN <= MuxOut;
+      else
+        SDIN <= '0';
+      end if;
     end if;
   end process;
   
@@ -84,10 +88,10 @@ begin
     if RST = '1' then
       -- Reiniciamos el Contador a su valor incial que en este caso es el 1
       CntOut <= "1000";
-    elsif (CLK'event and CLK = '1') and (CE = '1') then
+    elsif (CLK'event and CLK = '1') and (CE = '1') and (BUSY = '1') then
       if CntOut = "0000" then
         -- Se verifica que estamos en el fin de cuenta, por tanto reinciamos al valor inicial
-        CntOut <= "1000"
+        CntOut <= "1000";
       else
         -- Si no estamos en el fin de cuenta, decrementamos en una unidad la salida:
         CntOut <= CntOut - 1;
@@ -153,6 +157,15 @@ begin
   process(BUSY) -- Proceso del circuito combinacional que define CS
   begin
     CS <= not BUSY;
+  end process;
+
+  process(CntOut) -- Proceso que modela el circuito combinacional que define END_SPI
+  begin
+    if CntOut = "0000" then
+      END_SPI <= '1';
+    else
+      END_SPI <= '0';
+    end if;
   end process;
   
 end rtl;
