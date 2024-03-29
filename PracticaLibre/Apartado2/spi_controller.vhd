@@ -100,6 +100,7 @@ begin
   begin
     if RST = '1' then
       CntReg <= 0;
+      FC <= '0';
     elsif (CLK'event and CLK = '1') and (BUSY = '1') then
       -- Se verifica que hay sennal de reloj y que el sistema esta transmitiendo un dato
       if CntReg = N1 - 1 then
