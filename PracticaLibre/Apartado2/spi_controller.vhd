@@ -144,25 +144,6 @@ begin
 
   SCLK <= SCLK_Out;
 
---  process(DATA_SPI_OK, CE, CntOut, RST, CLK) -- Proceso del cirucito secuencial que define BUSY
- 
---  begin
---    if RST = '1' then
---      BUSY <= '0';
---    elsif CLK'event and CLK = '1' then
---      if DATA_SPI_OK = '1' then
---        BUSY <= '1';
---        end if;
---      if CE = '1' then
---        if CntOut /= "0000" then
---          BUSY <= '1';
---        else
---          BUSY <= '0';
---        end if;
---      end if;
---    end if;
---  end process;
-
   process(DATA_SPI_OK, CE, CntOut, RST, CLK) -- Proceso del cirucito secuencial que define BUSY
   begin
     if RST = '1' then
