@@ -95,6 +95,8 @@ begin
       end if;
     end if;
   end process;
+  
+
 
   process(BUSY, CLK, RST) -- Proceso que modela el Prescaler, nuestro valor de N1 es 28
   begin
@@ -128,37 +130,52 @@ begin
   process(FC, BUSY, CntOut, ultFC, CLK, RST) -- Proceso que modela el circuito secuencial de salida del Prescaler
   begin
     if RST = '1' then
-      SCLK_Out <= '1';
+      SCLK_Out <= '0';
     elsif CLK'event and CLK = '0' then
-      if BUSY = '1' and ultFC ='1' and FC ='0'then
-        --if CntOut /= "0000" then
+      if BUSY = '1' then
+        if ultFC ='1' and FC ='0'then
           SCLK_Out <= not SCLK_Out;
-        --end if;
+        end if;
+      else 
+        SCLK_Out <='0';
       end if;
     end if;
   end process;
 
   SCLK <= SCLK_Out;
 
+--  process(DATA_SPI_OK, CE, CntOut, RST, CLK) -- Proceso del cirucito secuencial que define BUSY
+ 
+--  begin
+--    if RST = '1' then
+--      BUSY <= '0';
+--    elsif CLK'event and CLK = '1' then
+--      if DATA_SPI_OK = '1' then
+--        BUSY <= '1';
+--        end if;
+--      if CE = '1' then
+--        if CntOut /= "0000" then
+--          BUSY <= '1';
+--        else
+--          BUSY <= '0';
+--        end if;
+--      end if;
+--    end if;
+--  end process;
+
   process(DATA_SPI_OK, CE, CntOut, RST, CLK) -- Proceso del cirucito secuencial que define BUSY
-  variable auxBusy : std_logic := '0';
   begin
     if RST = '1' then
       BUSY <= '0';
     elsif CLK'event and CLK = '1' then
       if DATA_SPI_OK = '1' then
-        auxBusy := '1';
-        end if;
-      if CE = '1' then
-        if CntOut /= "0000" then
-          auxBusy := '1';
-        else
-          auxBusy := '0';
-        end if;
+        BUSY <= '1';
+      elsif CE= '1' and CntOut = "0000"then
+        BUSY <= '0';
       end if;
-      BUSY <= auxBusy;
-    end if;
+    end if;   
   end process;
+
 
   process(BUSY) -- Proceso del circuito combinacional que define CS
   begin
