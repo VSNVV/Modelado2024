@@ -28,6 +28,7 @@ signal FC     : std_logic; -- Sennal de salida el Prescaler
 signal ultFC  : std_logic; -- Sennal auxiliar de FC
 signal CntReg : integer range 0 to N1 - 1; -- Sennal del contador asociado del Prescaler
 signal SCLK_Out   : std_logic; -- Sennal SCLK
+signal CntOut_Out : unsigned(3 downto 0);
 
 begin
   process(DATA_SPI, DATA_SPI_OK, CLK) -- Prcoeso del Registro (creo que es un biestable D)
@@ -93,7 +94,9 @@ begin
           CntOut <= CntOut - 1;
         end if;
       end if;
+      CntOut_Out <= CntOut;
     end if;
+    
   end process;
   
 
@@ -120,7 +123,7 @@ begin
 
   process(FC, SCLK_Out) -- Proceso que modela el circuito combinacional
   begin
-    if (FC = '1') and (SCLK_Out = '1') then
+    if (FC = '1') and (SCLK_Out = '0') then
       CE <= '1';
     else
       CE <= '0';
@@ -130,38 +133,20 @@ begin
   process(FC, BUSY, CntOut, ultFC, CLK, RST) -- Proceso que modela el circuito secuencial de salida del Prescaler
   begin
     if RST = '1' then
-      SCLK_Out <= '0';
+      SCLK_Out <= '1';
     elsif CLK'event and CLK = '0' then
       if BUSY = '1' then
         if ultFC ='1' and FC ='0'then
           SCLK_Out <= not SCLK_Out;
         end if;
       else 
-        SCLK_Out <='0';
+        SCLK_Out <='1';
       end if;
     end if;
   end process;
 
   SCLK <= SCLK_Out;
 
---  process(DATA_SPI_OK, CE, CntOut, RST, CLK) -- Proceso del cirucito secuencial que define BUSY
- 
---  begin
---    if RST = '1' then
---      BUSY <= '0';
---    elsif CLK'event and CLK = '1' then
---      if DATA_SPI_OK = '1' then
---        BUSY <= '1';
---        end if;
---      if CE = '1' then
---        if CntOut /= "0000" then
---          BUSY <= '1';
---        else
---          BUSY <= '0';
---        end if;
---      end if;
---    end if;
---  end process;
 
   process(DATA_SPI_OK, CE, CntOut, RST, CLK) -- Proceso del cirucito secuencial que define BUSY
   begin
@@ -174,6 +159,7 @@ begin
         BUSY <= '0';
       end if;
     end if;   
+   
   end process;
 
 
@@ -182,9 +168,9 @@ begin
     CS <= not BUSY;
   end process;
 
-  process(CntOut) -- Proceso que modela el circuito combinacional que define END_SPI
+  process(CntOut,CntOut_Out) -- Proceso que modela el circuito combinacional que define END_SPI
   begin
-    if CntOut = "0000" then
+    if CntOut_Out = "0000" and CntOut /="0000"  then
       END_SPI <= '1';
     else
       END_SPI <= '0';

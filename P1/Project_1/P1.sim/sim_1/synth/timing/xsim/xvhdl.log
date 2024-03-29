@@ -1,0 +1,6 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado2/spi_controller_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity spi_controller_tb
+ERROR: [VRFC 10-149] 'spi_controller' is not compiled in library xil_defaultlib [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado2/spi_controller_tb.vhd:30]
+ERROR: [VRFC 10-149] 'spi_device' is not compiled in library xil_defaultlib [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado2/spi_controller_tb.vhd:43]
+ERROR: [VRFC 10-1504] unit sim ignored due to previous errors [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado2/spi_controller_tb.vhd:14]
+INFO: [VRFC 10-240] VHDL file C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado2/spi_controller_tb.vhd ignored due to errors
