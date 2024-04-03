@@ -27,12 +27,12 @@ signal Dec3To8Out : std_logic_vector(7 downto 0); -- Sennal de salida del Decodi
 begin
   process(DATO_RX, DATO_RX_OK, CLK, RST) -- Proceso del Registro de Desplazamiento
   begin
-    if clk'event and clk = '1' then
+  if RST ='1' then
+    RDOut <= (others => '0');
+    elsif clk'event and clk = '1' then
       if DATO_RX_OK = '1' then
         RDOut <= RDOut(23 downto 0) & DATO_RX;
-      end if;
-    elsif RST = '1' then
-      RDOut <= (others => '0');
+      end if;     
     end if;
   end process;
 
