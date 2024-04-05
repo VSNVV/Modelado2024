@@ -12,7 +12,7 @@ end display_controller_tb;
 -------------------------------------------------------------------------------
 
 architecture sim of display_controller_tb is
-  constant CNT1         : time      :=(4*50)*8*10ns;  --completar
+  constant CNT1         : time      :=(4*50)*16*10ns;  --completar
   signal   RST_i        : std_logic := '1';
   signal   CLK_i        : std_logic := '0';
   signal   DATO_RX_OK_i : std_logic;
@@ -77,23 +77,23 @@ begin  -- sim
     variable dato_1 : std_logic_vector(31 downto 0);
   begin  -- process
     wait for 333 ns;
-    dato_1 := x"00000012";                      --completar
-    dato_vis <= dato_1;
-    enviar_dato(dato_1);
-
-    dato_1 := x"00001234";                      --completar
-    dato_vis <= dato_1;
-    enviar_dato(dato_1);
-
-    dato_1 := x"00123456";                      --completar
-    dato_vis <= dato_1;
-    enviar_dato(dato_1);
-
     dato_1 := x"12345678";                      --completar
     dato_vis <= dato_1;
     enviar_dato(dato_1);
 
-    dato_1 := x"3456789A";                      --completar
+    dato_1 := x"538AB3C8";                      --completar
+    dato_vis <= dato_1;
+    enviar_dato(dato_1);
+
+    dato_1 := x"2756D8AF";                      --completar
+    dato_vis <= dato_1;
+    enviar_dato(dato_1);
+
+    dato_1 := x"153298C2";                      --completar
+    dato_vis <= dato_1;
+    enviar_dato(dato_1);
+
+    dato_1 := x"AE852317";                      --completar
     dato_vis <= dato_1;
     enviar_dato(dato_1);
 

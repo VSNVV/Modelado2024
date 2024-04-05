@@ -13,8 +13,8 @@ end display_controller;
 
 architecture rtl of display_controller is
 -- Declaracion de sennales
--- constant CTE_ANDS      : integer := 5e6;   -- para la implementacion
-constant CTE_ANDS  : integer := 25;  -- para la simulacion
+constant CTE_ANDS      : integer := 5e6;   -- para la implementacion
+--constant CTE_ANDS  : integer := 200;  -- para la simulacion
 signal CntReg : integer range 0 to CTE_ANDS - 1;
 signal RDOut : std_logic_vector(31 downto 0); -- Sennal de salida del Registro de Desplazamiento
 signal PROut : std_logic; -- Sennal de salida del Prescaler
@@ -104,64 +104,65 @@ begin
   process(MuxOut) -- Proceso del Decodificador de Hexadecimal a 7 segmentos
   begin
     case MuxOut is
+      when x"0" =>
+        DecHexOut <= "1000000";
       when x"1" =>
-        DecHexOut <= "0000001"; -- Numero 1
+        DecHexOut<= "1111001";
       when x"2" =>
-        DecHexOut <= "1001111"; -- Numero 2
+        DecHexOut <= "0100100"; 
       when x"3" =>
-        DecHexOut <= "0010010"; -- Numero 3
+        DecHexOut <= "0110000";
       when x"4" =>
-        DecHexOut <= "1001100"; -- Numero 4
+        DecHexOut <= "0011001";
       when x"5" =>
-        DecHexOut <= "0100100"; -- Numero 5
+        DecHexOut <= "0010010";
       when x"6" =>
-        DecHexOut <= "0100000"; -- Numero 6
+        DecHexOut <= "0000010";
       when x"7" =>
-        DecHexOut <= "0001111"; -- Numero 7
+        DecHexOut <= "1111000";
       when x"8" =>
-        DecHexOut <= "0000000"; -- Numero 8
+        DecHexOut <= "0000000";
       when x"9" =>
-        DecHexOut <= "0000100"; -- Numero 9
+        DecHexOut <= "0011000";
       when x"A" =>
-        DecHexOut <= "0001000"; -- Letra A
+        DecHexOut <= "0001000";
       when x"B" =>
-        DecHexOut <= "1100000"; -- Letra B
+        DecHexOut <= "0000011";
       when x"C" =>
-        DecHexOut <= "0110001"; -- Letra C
+        DecHexOut <= "1000110"; 
       when x"D" =>
-        DecHexOut <= "1000010"; -- Letra D
+        DecHexOut <= "0100001";
       when x"E" =>
-        DecHexOut <= "0110000"; -- Letra E
+        DecHexOut <= "0000110";
       when x"F" =>
-        DecHexOut <= "0111000"; -- Letra F
+        DecHexOut <= "0001110";
       when others =>
-        DecHexOut <= "1111111"; -- Display Apagado
+        DecHexOut <= "0000000"; 
     end case;
   end process;
 
+
   process(DecHexOut, CLK, RST) -- Proceso del Registro SEG_AG (Biestable tipo D)
   begin
-    if RST = '1' then
-      SEG_AG <= "0000000"; -- Como es anodo comun, estarian todos los leds apagados
-    elsif clk'event and clk = '1' then
+   -- Como es anodo comun, estarian todos los leds apagados
+    if clk'event and clk = '1' then
       SEG_AG <= DecHexOut;
     end if;
   end process;
 
   process(CntOut) -- Proceso del Circuito Combinacional
   begin
-    if CntOut rem 2 = 0 then
-      CCOut <= '1';
-    else
+    if CntOut(0) = '0' then
       CCOut <= '0';
+    else
+      CCOut <= '1';
     end if;
   end process;
 
   process(CCOut, CLK, RST) -- Proceos del Registro DP (Biestable tipo D)
   begin
-    if RST = '1' then
-      DP <= '0';
-    elsif CLK'event and CLK = '1' then
+
+    if CLK'event and CLK = '1' then
       DP <= CCOut;
     end if;
   end process;
@@ -192,9 +193,8 @@ begin
 
   process(Dec3To8Out, CLK, RST) -- Proceso del Registro AND_70 (Biestable tipo D)
   begin
-    if RST = '1' then
-      AND_70 <= "00000000";
-    elsif CLK'event and CLK = '1' then
+
+    if CLK'event and CLK = '1' then
       AND_70 <= Dec3To8Out;
     end if;
   end process;

@@ -31,7 +31,7 @@ signal SCLK_Out   : std_logic; -- Sennal SCLK
 signal CntOut_Out : unsigned(3 downto 0);
 
 begin
-  process(DATA_SPI, DATA_SPI_OK, CLK) -- Prcoeso del Registro (creo que es un biestable D)
+  process(DATA_SPI, DATA_SPI_OK, CLK,RST) -- Prcoeso del Registro (creo que es un biestable D)
   begin
     if RST = '1' then
       -- Se resetea el registro
@@ -101,7 +101,7 @@ begin
   
 
 
-  process(BUSY, CLK, RST) -- Proceso que modela el Prescaler, nuestro valor de N1 es 28
+  process(BUSY, CLK, RST,FC) -- Proceso que modela el Prescaler, nuestro valor de N1 es 28
   begin
     if RST = '1' then
       CntReg <= 0;
