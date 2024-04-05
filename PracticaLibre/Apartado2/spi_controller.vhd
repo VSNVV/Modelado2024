@@ -117,8 +117,9 @@ begin
         CntReg <= CntReg + 1;
         FC <= '0';
       end if;
+      ultFC <= FC;
     end if;
-    ultFC <= FC;
+    
   end process;
 
   process(FC, SCLK_Out) -- Proceso que modela el circuito combinacional
@@ -133,7 +134,7 @@ begin
   process(FC, BUSY, CntOut, ultFC, CLK, RST) -- Proceso que modela el circuito secuencial de salida del Prescaler
   begin
     if RST = '1' then
-      SCLK_Out <= '1';
+      SCLK_Out <= '0';
     elsif CLK'event and CLK = '0' then
       if BUSY = '1' then
         if ultFC ='1' and FC ='0'then
