@@ -37,8 +37,9 @@ begin  -- sim
     port map (
       rx => rx_i);
 
-  -- estímulos para CLK y RST
-
+  -- estï¿½mulos para CLK y RST
+  RST_i <= '0'       after 123 ns;
+  clk_i <= not clk_i after 5 ns;
   --
 
 
