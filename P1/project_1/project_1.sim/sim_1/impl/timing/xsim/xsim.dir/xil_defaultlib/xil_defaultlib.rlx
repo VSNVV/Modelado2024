@@ -2,6 +2,8 @@
 2017.4
 Dec 15 2017
 21:07:18
-C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/P1/project_1/project_1.sim/sim_1/impl/timing/xsim/spi_controller_tb_time_impl.v,1712331547,verilog,C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado2/spi_controller_tb.vhd,,,glbl;spi_controller,,,,,,,,
+C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/P1/project_1/project_1.sim/sim_1/impl/timing/xsim/display_controller_tb_time_impl.v,1712393192,verilog,C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado1/display_controller_tb.vhd,,,display_controller;glbl,,,,,,,,
+C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado1/display.vhd,1694767306,vhdl,C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado1/display_controller_tb.vhd,,,display,,,,,,,,
+C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado1/display_controller_tb.vhd,1712243003,vhdl,,,,display_controller_tb,,,,,,,,
 C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado2/spi_controller_tb.vhd,1711731920,vhdl,,,,spi_controller_tb,,,,,,,,
 C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado2/spi_device.vhd,1710430902,vhdl,C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado2/spi_controller_tb.vhd,,,spi_device,,,,,,,,

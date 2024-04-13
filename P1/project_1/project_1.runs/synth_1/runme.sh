@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log test_oled.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source test_oled.tcl
+EAStep vivado -log test_display_controller.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source test_display_controller.tcl
