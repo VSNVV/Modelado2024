@@ -19,13 +19,16 @@ constant tiempoMuestreo : integer := 29; -- Constante del prescaler, 4.34us --> 
 signal PR_Cnt : unsigned(3 downto 0); -- Sennal del contador del Prescaler
 signal PR_FC : std_logic; -- Sennal de salida del Prescaler
 signal FSM_PR : std_logic; -- Sennal que manda la FSM al Prescaler para que este siga contando o no, en caso de que no, se reincia a 0
-signal FSM_CntM : std_logic; -- Sennal que manda la FSM al contador para que siga contando o no
-signal CntM_Out : unsigned(4 downto 0); -- Sennal de salida del Contador que cuenta las MUESTRAS realizadas sobre un bit
+signal FSM_CntM : std_logic; -- Sennal que manda la FSM al contador de muestras para que pueda contar o no
+signal FSM_CntB : std_logic; -- Sennal que manda la FSM al contador de bits para que pueda contar o no
+signal FSM_Val : std_logic; -- Sennal que manda la FSM al Registro para enviar el dato por dato_rx
+signal CntM_Out : unsigned(3 downto 0); -- Sennal de salida del Contador que cuenta las MUESTRAS realizadas sobre un bit
+signal CntB_Out : unsigned(3 downto 0); -- Sennal de salida del COntador que cuenta los BITS leidos
 signal RDM_Out : std_logic_vector(14 downto 0); -- Sennal de salida del Registro de Desplazamiento que sobremuestrea RX
 signal RDB_Out : std_logic_vector(10 downto 0); -- Sennal de salida del Registro de Desplazamiento que contiene los bits finales
 signal CntBin : std_logic; -- Sennal de salida del Circuito Combinacional que cuenta el numero de 1 y 0 de las muestras de RX
 signal Val_Out : std_logic; -- Sennal de salida del bloque combinacional que comprueba si un dato es correcto o no
-type FSM is(Idle, Receiving, Outputing, Verifying, Error); --declaracion de la maquina de estados con los distintos casos posibles
+type FSM is (Idle, Receiving, Outputing, Verifying, Error); --declaracion de la maquina de estados con los distintos casos posibles
 signal STD_Act: FSM; --estado actual de la maquina de estados
 
 begin
@@ -74,6 +77,27 @@ begin
       else
         -- Se verifica que la Maquina de Estados no nos deja contar, por tanto reseteamos el contador para el siguiente dato
         CntM_Out <= "0000";
+      end if;
+    end if;
+  end process;
+
+  process(CntM_Out, FSM_CntB, CLK, RST) -- Proceso que modela el Contador que cuenta los bits leidos
+  begin
+    if RST = '1' then
+      CntB_Out <= 0;
+    elsif CLK'event and CLK = '1' then
+      if FSM_CntB = '1' then
+        -- Verificamos que la maquina de estados deja contar
+        if (CntM_Out = 15) then
+          if CntB_Out < 11 then
+            CntB_Out <= CntB_Out + 1;
+          else
+            CntB_Out <= 0;
+          end if;
+        end if;
+      else
+        -- Verificamos que la maquina de estados no nos deja contar, por tanto resetamos para el siguiente dato
+        CntB_Out <= 0;
       end if;
     end if;
   end process;
@@ -151,48 +175,67 @@ begin
       dato_rx <= RDB_OutRDB_Out;
     end if;
   end process;
-
---  process(CntB_Out, Val_Out, CLK, RST) -- Proceso que modela la Maquina Finita de Estados
---  begin
---    if RST = '1' then
---      -- Lo reiniciamos al estado ddonde esta esperando la llegada de un dato
---    elsif(CLK'event and CLK = '1') then
---      -- Segun el cambio en las sennales que tengamos, pasaremos de un estado a otro, o bien nos quedaremos en el mismo
---      -- Aqui codificariamos los distintos estados que tiene nuestra Maquina Finita de Estados
---    end if;
---  end process;
     
-  process(rx,CNTB_Out,Val_Out,STD_Act,CLK,RST)-- Proceso que modela la Maquina Finita de Estados, cuyos estados son: Idle, Receiving, Outputing, Verifying, Error
+  process(rx, CNTB_Out, Val_Out, STD_Act, CLK, RST)-- Proceso que modela la Maquina Finita de Estados, cuyos estados son: Idle, Receiving, Outputing, Verifying y Error
   begin 
-    if RST='1'; then 
+    if RST = '1'; then 
       STD_Act <= Idle;
-      
-    elsif CLK'event and CLK = '1'  
-      Case STD_Act is
+      FSM_PR <= '0';
+      FSM_CntM <= '0';
+      FSM_CntB <= '0';
+      FSM_Val <= '0';
+      dato_rx_ok <= '0';
+      error_recep <= '0';
+    elsif CLK'event and CLK = '1' then
+      case STD_Act is
         when Idle =>
-        if then
-        
-        end if;
+          if RX = '0' then
+            STD_Act <= Receiving;
+          end if;
         when Receiving =>
-        if then 
-        
-        end if;
-        when Outputing =>
-        if then
-        
-        end if;
+          if CntB_Out >= 11 then
+            STD_Act <= Verifying;
+          end if;
         when Verifying =>
-        if then
-        
-        end if;
+          if Val_Out = '1' then
+            STD_Act <= Outputing;
+          else
+            STD_Act <= Error;
+          end if;
+        when Outputing =>
+          if RX = '1' then
+            STD_Act <= Idle;
+          end if;
         when Error =>
-        if then
-        
-        end if;        
+          if error_recep = '1' then
+            STD_Act <= Idle;        
+          end if;        
       end case;   
     end if;
   end process;
-    
-    end if;
+
+  process(RX, STD_Act) -- Proceso que modela el calculo de las salidas de la maquina de estados en cada estado
+  begin
+    case STD_Act is
+      when Idle =>
+        FSM_Val <= '0';
+        dato_rx_ok = '0';
+        if RX = '0' then
+          error_recep = '0';
+        end if;
+      when Receiving =>
+        FSM_PR <= '1';
+        FSM_CntB <= '1';
+        FSM_CntM <= '1';
+      when Verifying =>
+        FSM_PR <= '0';
+        FSM_CntB <= '0';
+        FSM_CntM <= '0';
+      when Error =>
+        error_recep <= '1';
+      when Outputing =>
+        FSM_Val <= '1';
+        dato_rx_ok <= '1';
+      end case;
   end process;
 end rtl;
