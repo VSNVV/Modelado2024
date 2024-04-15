@@ -148,7 +148,7 @@ begin
       dato_rx <= (others => '0');
     elsif (CLK'event and CLK = '1') and (FSM_VAL = '1') then
       -- Se verifica que la Maquina de estados da la orden a que se envie el dato, por tanto, lo enviamos
-      dato_rx <= RDB_Out;
+      dato_rx <= RDB_OutRDB_Out;
     end if;
   end process;
 
@@ -162,12 +162,36 @@ begin
 --    end if;
 --  end process;
     
-  process(rx,CNTB_Out,STD_Act,CLK,RST)
+  process(rx,CNTB_Out,Val_Out,STD_Act,CLK,RST)-- Proceso que modela la Maquina Finita de Estados, cuyos estados son: Idle, Receiving, Outputing, Verifying, Error
   begin 
     if RST='1'; then 
       STD_Act <= Idle;
       
     elsif CLK'event and CLK = '1'  
+      Case STD_Act is
+        when Idle =>
+        if then
+        
+        end if;
+        when Receiving =>
+        if then 
+        
+        end if;
+        when Outputing =>
+        if then
+        
+        end if;
+        when Verifying =>
+        if then
+        
+        end if;
+        when Error =>
+        if then
+        
+        end if;        
+      end case;   
+    end if;
+  end process;
     
     end if;
   end process;
