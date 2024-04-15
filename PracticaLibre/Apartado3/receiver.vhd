@@ -15,6 +15,7 @@ end receiver;
 architecture rtl of receiver is
 -- Declaración de las Sennales y Constantes
 constant tiempoMuestreo : integer := 29; -- Constante del prescaler, 4.34us --> 4340ns --> 4340 / 15 = 289.33 --> 289.33 / 10 = 28.93 --> 29 CLK
+--constant tiempoMuestreo : integer := 31; -- Constante del prescaler, 4.34us --> 4340ns --> 4340 / 14 = 310 --> 310 / 10 = 31 --> 31 CLK
 signal PR_Cnt : unsigned(3 downto 0); -- Sennal del contador del Prescaler
 signal PR_FC : std_logic; -- Sennal de salida del Prescaler
 signal FSM_PR : std_logic; -- Sennal que manda la FSM al Prescaler para que este siga contando o no, en caso de que no, se reincia a 0
@@ -24,8 +25,11 @@ signal RDM_Out : std_logic_vector(14 downto 0); -- Sennal de salida del Registro
 signal RDB_Out : std_logic_vector(10 downto 0); -- Sennal de salida del Registro de Desplazamiento que contiene los bits finales
 signal CntBin : std_logic; -- Sennal de salida del Circuito Combinacional que cuenta el numero de 1 y 0 de las muestras de RX
 signal Val_Out : std_logic; -- Sennal de salida del bloque combinacional que comprueba si un dato es correcto o no
+type FSM is(Idle, Receiving, Outputing, Verifying, Error); --declaracion de la maquina de estados con los distintos casos posibles
+signal STD_Act: FSM; --estado actual de la maquina de estados
 
 begin
+
   process(FSM_PR, CLK, RST) -- Proceso que modela el Prescaler
   begin
     if RST = '1' then
@@ -148,15 +152,23 @@ begin
     end if;
   end process;
 
-  process(CntB_Out, Val_Out, CLK, RST) -- Proceso que modela la Maquina Finita de Estados
-  begin
-    if RST = '1' then
-      -- Lo reiniciamos al estado ddonde esta esperando la llegada de un dato
-    elsif(CLK'event and CLK = '1') then
-      -- Segun el cambio en las sennales que tengamos, pasaremos de un estado a otro, o bien nos quedaremos en el mismo
-      -- Aqui codificariamos los distintos estados que tiene nuestra Maquina Finita de Estados
+--  process(CntB_Out, Val_Out, CLK, RST) -- Proceso que modela la Maquina Finita de Estados
+--  begin
+--    if RST = '1' then
+--      -- Lo reiniciamos al estado ddonde esta esperando la llegada de un dato
+--    elsif(CLK'event and CLK = '1') then
+--      -- Segun el cambio en las sennales que tengamos, pasaremos de un estado a otro, o bien nos quedaremos en el mismo
+--      -- Aqui codificariamos los distintos estados que tiene nuestra Maquina Finita de Estados
+--    end if;
+--  end process;
+    
+  process(rx,CNTB_Out,STD_Act,CLK,RST)
+  begin 
+    if RST='1'; then 
+      STD_Act <= Idle;
+      
+    elsif CLK'event and CLK = '1'  
+    
     end if;
   end process;
-    
-
 end rtl;
