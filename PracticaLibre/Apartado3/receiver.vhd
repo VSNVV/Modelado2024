@@ -20,9 +20,10 @@ signal PR_FC : std_logic; -- Sennal de salida del Prescaler
 signal FSM_PR : std_logic; -- Sennal que manda la FSM al Prescaler para que este siga contando o no, en caso de que no, se reincia a 0
 signal FSM_CntM : std_logic; -- Sennal que manda la FSM al contador para que siga contando o no
 signal CntM_Out : unsigned(4 downto 0); -- Sennal de salida del Contador que cuenta las MUESTRAS realizadas sobre un bit
-signal RDM_Out : std_logic_vector(10 downto 0); -- Sennal de salida del Registro de Desplazamiento que sobremuestrea RX
+signal RDM_Out : std_logic_vector(14 downto 0); -- Sennal de salida del Registro de Desplazamiento que sobremuestrea RX
 signal RDB_Out : std_logic_vector(10 downto 0); -- Sennal de salida del Registro de Desplazamiento que contiene los bits finales
 signal CntBin : std_logic; -- Sennal de salida del Circuito Combinacional que cuenta el numero de 1 y 0 de las muestras de RX
+signal Val_Out : std_logic; -- Sennal de salida del bloque combinacional que comprueba si un dato es correcto o no
 
 begin
   process(FSM_PR, CLK, RST) -- Proceso que modela el Prescaler
@@ -79,7 +80,7 @@ begin
       RDM_Out <= (others => '0');
     elsif (CLK'event and CLK = '1') and (PR_FC ='1') then
       -- Cada ciclo de reloj cogemos una muestra de RX, y como empezamos con el bit de menor peso, desplazamos de der a izq
-      RDM_Out <= RX & RDOut(9 downto 0);
+      RDM_Out <= RX & RDM_Out(14 downto 1);
     end if;
   end process;
 
@@ -88,7 +89,7 @@ begin
   variable num1 : integer := 0; -- Variable que almacena el numero de 1
   begin
     -- Contamos el numero de 1 y 0 que hay
-    for i in range (8 downto 1) loop
+    for i in RDM_Out'range loop
       if RDM_Out(i) = '1' then
         num1 := num1 + 1;
       else
@@ -99,7 +100,7 @@ begin
     if(num0 > num1) then
       -- Verificamos que hay mas 0 que 1, por tanto la salida sera un 0
       CntBin <= '0';
-    else
+    else-
       -- Verificamos que hay mas 1 que 0, por tanto la salida sera un 1
       CntBin <= '1';
     end if;
@@ -111,13 +112,30 @@ begin
       RDB_Out <= (others => '0');
     elsif (CLK'event and CLK = '1') and (CntM_Out = 15) then
       -- Cada vez que se completa una muestra, podemos leer la entrada
-      RDB_Out <= CntBin & RDB_Out(9 downto 0);
+      RDB_Out <= CntBin & RDB_Out(10 downto 1);
     end if;
   end process;
 
   process(RDB_Out) -- Proceso que modela el circuito combinacional que valida si un dato es correcto o no
+  variable num_1 : integer :=0;
+  variable par: std_logic:='0';
   begin
-    -- Codigo del bloque combinacional
+  for i in range (8 downto 1) loop
+    if RDB_Out(i) = '1';
+        num_1:= num_1+1;
+    end if;
+  end loop;
+  if num_i rem 2 = 0 then
+    -- Verificamos que hay un numero par de 1
+    par = '1';
+  else 
+    par = '0';
+  end if;
+  if par=RDB_Out(9) and RDB_Out(0) = '0' and RDB_Out(10) = '1' then
+    Val_Out <= '1';
+  else 
+    Val_Out <= '0';
+  end if;
   end process;
 
   process(RDB_Out, FSM_Val, CLK, RST) -- Proceso que modela el Registro que almacena los datos y los envia a la salida
