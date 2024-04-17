@@ -1,3 +1,4 @@
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -13,7 +14,7 @@ entity receiver is
 end receiver;
 
 architecture rtl of receiver is
--- Declaración de las Sennales y Constantes
+-- Declaracion de las Sennales y Constantes
 constant tiempoMuestreo : integer := 29; -- Constante del prescaler, 4.34us --> 4340ns --> 4340 / 15 = 289.33 --> 289.33 / 10 = 28.93 --> 29 CLK
 --constant tiempoMuestreo : integer := 31; -- Constante del prescaler, 4.34us --> 4340ns --> 4340 / 14 = 310 --> 310 / 10 = 31 --> 31 CLK
 signal PR_Cnt : unsigned(3 downto 0); -- Sennal del contador del Prescaler
@@ -28,6 +29,7 @@ signal RDM_Out : std_logic_vector(14 downto 0); -- Sennal de salida del Registro
 signal RDB_Out : std_logic_vector(10 downto 0); -- Sennal de salida del Registro de Desplazamiento que contiene los bits finales
 signal CntBin : std_logic; -- Sennal de salida del Circuito Combinacional que cuenta el numero de 1 y 0 de las muestras de RX
 signal Val_Out : std_logic; -- Sennal de salida del bloque combinacional que comprueba si un dato es correcto o no
+signal PR_Out : std_logic;
 type FSM is (Idle, Receiving, Outputing, Verifying, Error); --declaracion de la maquina de estados con los distintos casos posibles
 signal STD_Act: FSM; --estado actual de la maquina de estados
 
@@ -36,7 +38,7 @@ begin
   process(FSM_PR, CLK, RST) -- Proceso que modela el Prescaler
   begin
     if RST = '1' then
-      PR_Cnt <= 0;
+      PR_Cnt <= (others => '0');
       PR_FC <= '0';
     elsif CLK'event and CLK = '1' then
       -- Ahora tenemos que ver si podemos seguir contando
@@ -44,7 +46,7 @@ begin
         -- Significa que podemos contar, aunque si estamos en 27, tendremos que reiniciar
         if PR_Cnt = tiempoMuestreo - 1 then
           -- Se verifica que se ha llegado al fin de cuenta, y que tenemos que reiniciar
-          PR_Cnt <= 0;
+          PR_Cnt <= (others => '0');
           PR_FC <= '1';
         else
           -- No estamos a fin de cuenta, por tanto tenemos que incrementar el contador
@@ -53,7 +55,7 @@ begin
         end if;
       else
         -- Verificamos que no podemos contar porque la maquina de estados no esta recibiendo, por tanto reiniciamos
-        PR_Cnt <= 0;
+        PR_Cnt <= (others => '0');
         PR_FC <= '0';
       end if;
     end if;
@@ -62,9 +64,8 @@ begin
   process(PR_Out, FSM_CntM, CLK, RST) -- Proceso que modela el Contador que cuenta las muestras realizadas sobre un bit
   begin
     if RST = '1' then
-      CntM_Out <= 0;
-    elsif (CLK'event and CLK = '1') and (PR_Out = '1') then
-      -- Ahora tenemos que comprobar si la Maquina de Estados nos deja contar o no
+      CntM_Out <= (others => '0');
+    elsif (CLK'event) and (CLK = '1') and (PR_Out = '1') then -- Ahora tenemos que comprobar si la Maquina de Estados nos deja contar o no
       if FSM_CntM = '1' then
         -- Podemos contar, y en su caso, reiniciar el contador
         if CntM_Out < 15 then
@@ -72,11 +73,11 @@ begin
           CntM_Out <= CntM_Out + 1;
         elsif CntM_Out = 15 then
           -- Verificamos que estamos en el fin de cuenta, por tanto tenemos que reiniciar el contador
-          CntM_Out <= "0000";
+          CntM_Out <= (others => '0');
         end if;
       else
         -- Se verifica que la Maquina de Estados no nos deja contar, por tanto reseteamos el contador para el siguiente dato
-        CntM_Out <= "0000";
+        CntM_Out <= (others => '0');
       end if;
     end if;
   end process;
@@ -84,7 +85,7 @@ begin
   process(CntM_Out, FSM_CntB, CLK, RST) -- Proceso que modela el Contador que cuenta los bits leidos
   begin
     if RST = '1' then
-      CntB_Out <= 0;
+      CntB_Out <= (others => '0');
     elsif CLK'event and CLK = '1' then
       if FSM_CntB = '1' then
         -- Verificamos que la maquina de estados deja contar
@@ -92,12 +93,12 @@ begin
           if CntB_Out < 11 then
             CntB_Out <= CntB_Out + 1;
           else
-            CntB_Out <= 0;
+            CntB_Out <= (others => '0');
           end if;
         end if;
       else
         -- Verificamos que la maquina de estados no nos deja contar, por tanto resetamos para el siguiente dato
-        CntB_Out <= 0;
+        CntB_Out <= (others => '0');
       end if;
     end if;
   end process;
@@ -116,6 +117,8 @@ begin
   variable num0 : integer := 0; -- Variable que almacena el numero de 0
   variable num1 : integer := 0; -- Variable que almacena el numero de 1
   begin
+  num0:=0;
+  num1:=1;
     -- Contamos el numero de 1 y 0 que hay
     for i in RDM_Out'range loop
       if RDM_Out(i) = '1' then
@@ -128,7 +131,7 @@ begin
     if(num0 > num1) then
       -- Verificamos que hay mas 0 que 1, por tanto la salida sera un 0
       CntBin <= '0';
-    else-
+    else
       -- Verificamos que hay mas 1 que 0, por tanto la salida sera un 1
       CntBin <= '1';
     end if;
@@ -148,16 +151,16 @@ begin
   variable num_1 : integer :=0;
   variable par: std_logic:='0';
   begin
-  for i in range (8 downto 1) loop
-    if RDB_Out(i) = '1';
+  num_1:=0;
+  for i in 8 downto 1 loop
+    if RDB_Out(i) = '1' then
         num_1:= num_1+1;
-    end if;
+    end if; 
   end loop;
-  if num_i rem 2 = 0 then
-    -- Verificamos que hay un numero par de 1
-    par = '1';
+  if num_1 rem 2 = 0 then -- Verificamos que hay un numero par de 1
+    par := '1';
   else 
-    par = '0';
+    par := '0';
   end if;
   if par=RDB_Out(9) and RDB_Out(0) = '0' and RDB_Out(10) = '1' then
     Val_Out <= '1';
@@ -172,13 +175,13 @@ begin
       dato_rx <= (others => '0');
     elsif (CLK'event and CLK = '1') and (FSM_VAL = '1') then
       -- Se verifica que la Maquina de estados da la orden a que se envie el dato, por tanto, lo enviamos
-      dato_rx <= RDB_OutRDB_Out;
+      dato_rx <= RDB_Out(8 downto 1);
     end if;
   end process;
     
   process(rx, CNTB_Out, Val_Out, STD_Act, CLK, RST)-- Proceso que modela la Maquina Finita de Estados, cuyos estados son: Idle, Receiving, Outputing, Verifying y Error
   begin 
-    if RST = '1'; then 
+    if RST = '1' then 
       STD_Act <= Idle;
       FSM_PR <= '0';
       FSM_CntM <= '0';
@@ -207,7 +210,7 @@ begin
             STD_Act <= Idle;
           end if;
         when Error =>
-          if error_recep = '1' then
+          if Val_Out = '0' then
             STD_Act <= Idle;        
           end if;        
       end case;   
@@ -219,9 +222,9 @@ begin
     case STD_Act is
       when Idle =>
         FSM_Val <= '0';
-        dato_rx_ok = '0';
+        dato_rx_ok <= '0';
         if RX = '0' then
-          error_recep = '0';
+          error_recep <= '0';
         end if;
       when Receiving =>
         FSM_PR <= '1';

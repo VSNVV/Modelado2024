@@ -1,5 +1,4 @@
--------------------------------------------------------------------------------
-
+--
 library ieee;
 use ieee.std_logic_1164.all;
 
@@ -37,7 +36,7 @@ begin  -- sim
     port map (
       rx => rx_i);
 
-  -- est�mulos para CLK y RST
+  -- estimulos para CLK y RST
   RST_i <= '0'       after 123 ns;
   clk_i <= not clk_i after 5 ns;
   --

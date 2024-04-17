@@ -1,3 +1,4 @@
+--
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -53,10 +54,25 @@ begin  -- rtl
 
     tx_data;
 
-    dato_tx <= x"";-- completar
+    dato_tx <= x"FF";-- completar
     wait for 10 ns;
     tx_data;
-
+    
+    dato_tx <= x"55";-- completar
+    wait for 10 ns;
+    tx_data;
+    
+    dato_tx <= x"AB";-- completar
+    wait for 10 ns;
+    tx_data;
+    
+    dato_tx <= x"48";-- completar
+    wait for 10 ns;
+    tx_data;
+    
+    dato_tx <= x"37";-- completar
+    wait for 10 ns;
+    tx_data;    
     ------------------------------------------------
 --repetir varias veces las tres últimas líneas
 
