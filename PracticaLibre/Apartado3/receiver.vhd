@@ -65,6 +65,7 @@ begin
   begin
     if RST = '1' then
       CntM_Out <= (others => '0');
+     
     elsif (CLK'event) and (CLK = '1') and (PR_Out = '1') then -- Ahora tenemos que comprobar si la Maquina de Estados nos deja contar o no
       if FSM_CntM = '1' then
         -- Podemos contar, y en su caso, reiniciar el contador
@@ -86,6 +87,7 @@ begin
   begin
     if RST = '1' then
       CntB_Out <= (others => '0');
+
     elsif CLK'event and CLK = '1' then
       if FSM_CntB = '1' then
         -- Verificamos que la maquina de estados deja contar
@@ -152,7 +154,7 @@ begin
   variable par: std_logic:='0';
   begin
   num_1:=0;
-  for i in 8 downto 1 loop
+  for i in RDB_Out'range loop
     if RDB_Out(i) = '1' then
         num_1:= num_1+1;
     end if; 
