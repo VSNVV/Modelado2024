@@ -1,6 +1,1 @@
 Breakpoint File Version 1.0
-188 true C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/receiver.vhd
-190 true C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/receiver.vhd
-189 true C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/receiver.vhd
-192 true C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/receiver.vhd
-191 true C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/receiver.vhd

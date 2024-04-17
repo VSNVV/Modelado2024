@@ -185,12 +185,7 @@ begin
   begin 
     if RST = '1' then 
       STD_Act <= Idle;
-      FSM_PR <= '0';
-      FSM_CntM <= '0';
-      FSM_CntB <= '0';
-      FSM_Val <= '0';
-      dato_rx_ok <= '0';
-      error_recep <= '0';
+
     elsif CLK'event and CLK = '1' then
       case STD_Act is
         when Idle =>
@@ -223,8 +218,12 @@ begin
   begin
     case STD_Act is
       when Idle =>
-        FSM_Val <= '0';
-        dato_rx_ok <= '0';
+      FSM_PR <= '0';
+      FSM_CntM <= '0';
+      FSM_CntB <= '0';
+      FSM_Val <= '0';
+      dato_rx_ok <= '0';
+      error_recep <= '0';
         if RX = '0' then
           error_recep <= '0';
         end if;

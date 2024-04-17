@@ -1,0 +1,390 @@
+
+*** Running vivado
+    with args -log receiver.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source receiver.tcl
+
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source receiver.tcl -notrace
+Command: synth_design -top receiver -part xc7a100ticsg324-1L
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100ti'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100ti'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 17480 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 343.602 ; gain = 100.148
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'receiver' [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/receiver.vhd:16]
+WARNING: [Synth 8-5863] Implementing Library version of Mod/Rem due to signed path. This typically leads to poor QOR. Check RTL to see if unsigned path for the operator is possible  [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/receiver.vhd:162]
+WARNING: [Synth 8-6014] Unused sequential element PR_Cnt_reg was removed.  [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/receiver.vhd:41]
+WARNING: [Synth 8-3848] Net PR_Out in module/entity receiver does not have driver. [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/receiver.vhd:32]
+INFO: [Synth 8-256] done synthesizing module 'receiver' (1#1) [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/receiver.vhd:16]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 396.051 ; gain = 152.598
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 396.051 ; gain = 152.598
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100ticsg324-1L
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/test_receiver.xdc]
+WARNING: [Vivado 12-584] No ports matched 'led[0]'. [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/test_receiver.xdc:15]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/test_receiver.xdc:15]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[1]'. [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/test_receiver.xdc:16]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/test_receiver.xdc:16]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[2]'. [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/test_receiver.xdc:17]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/test_receiver.xdc:17]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[3]'. [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/test_receiver.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/test_receiver.xdc:18]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[4]'. [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/test_receiver.xdc:19]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/test_receiver.xdc:19]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[5]'. [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/test_receiver.xdc:20]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/test_receiver.xdc:20]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[6]'. [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/test_receiver.xdc:21]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/test_receiver.xdc:21]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[7]'. [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/test_receiver.xdc:22]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/test_receiver.xdc:22]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/test_receiver.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/test_receiver.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/receiver_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/receiver_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 746.730 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 746.730 ; gain = 503.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100ticsg324-1L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 746.730 ; gain = 503.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 746.730 ; gain = 503.277
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'STD_Act_reg' in module 'receiver'
+INFO: [Synth 8-5544] ROM "CntM_Out" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "par" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "STD_Act" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_Val_reg' [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/receiver.vhd:224]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                              000 |                              000
+               receiving |                              001 |                              001
+               verifying |                              010 |                              011
+               outputing |                              011 |                              010
+                   error |                              100 |                              100
+                  iSTATE |                              101 |                              111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'STD_Act_reg' using encoding 'sequential' in module 'receiver'
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_CntM_reg' [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/receiver.vhd:70]
+WARNING: [Synth 8-327] inferring latch for variable 'error_recep_reg' [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/receiver.vhd:226]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 746.730 ; gain = 503.277
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 4     
+	  14 Input     32 Bit       Adders := 2     
+	  10 Input     32 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               15 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   2 Input      4 Bit        Muxes := 4     
+	   2 Input      3 Bit        Muxes := 2     
+	   8 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 18    
+	   6 Input      1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module receiver 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 4     
+	  14 Input     32 Bit       Adders := 2     
+	  10 Input     32 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               15 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   2 Input      4 Bit        Muxes := 4     
+	   2 Input      3 Bit        Muxes := 2     
+	   8 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 18    
+	   6 Input      1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PR_FC_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\CntM_Out_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\CntM_Out_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\CntM_Out_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\CntM_Out_reg[3] )
+WARNING: [Synth 8-3332] Sequential element (CntM_Out_reg[3]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (CntM_Out_reg[2]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (CntM_Out_reg[1]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (CntM_Out_reg[0]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (PR_FC_reg) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (RDM_Out_reg[14]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (RDM_Out_reg[13]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (RDM_Out_reg[12]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (RDM_Out_reg[11]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (RDM_Out_reg[10]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (RDM_Out_reg[9]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (RDM_Out_reg[8]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (RDM_Out_reg[7]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (RDM_Out_reg[6]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (RDM_Out_reg[5]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (RDM_Out_reg[4]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (RDM_Out_reg[3]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (RDM_Out_reg[2]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (RDM_Out_reg[1]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (RDM_Out_reg[0]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (RDB_Out_reg[10]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (RDB_Out_reg[9]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (RDB_Out_reg[8]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (RDB_Out_reg[7]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (RDB_Out_reg[6]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (RDB_Out_reg[5]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (RDB_Out_reg[4]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (RDB_Out_reg[3]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (RDB_Out_reg[2]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (RDB_Out_reg[1]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (RDB_Out_reg[0]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (dato_rx_reg[7]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (dato_rx_reg[6]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (dato_rx_reg[5]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (dato_rx_reg[4]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (dato_rx_reg[3]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (dato_rx_reg[2]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (dato_rx_reg[1]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (dato_rx_reg[0]) is unused and will be removed from module receiver.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 746.730 ; gain = 503.277
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 746.730 ; gain = 503.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 746.730 ; gain = 503.277
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (FSM_CntM_reg) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (CntB_Out_reg[3]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (CntB_Out_reg[2]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (CntB_Out_reg[1]) is unused and will be removed from module receiver.
+WARNING: [Synth 8-3332] Sequential element (CntB_Out_reg[0]) is unused and will be removed from module receiver.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 746.730 ; gain = 503.277
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 746.730 ; gain = 503.277
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 746.730 ; gain = 503.277
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 746.730 ; gain = 503.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 746.730 ; gain = 503.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 746.730 ; gain = 503.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 746.730 ; gain = 503.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     1|
+|2     |LUT2 |     3|
+|3     |LUT3 |     2|
+|4     |LUT4 |     1|
+|5     |FDCE |     3|
+|6     |LD   |     2|
+|7     |IBUF |     3|
+|8     |OBUF |    10|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |    25|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 746.730 ; gain = 503.277
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 47 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 746.730 ; gain = 152.598
+Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 746.730 ; gain = 503.277
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 5 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2 instances were transformed.
+  LD => LDCE: 2 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+24 Infos, 58 Warnings, 8 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 756.039 ; gain = 525.629
+INFO: [Common 17-1381] The checkpoint 'C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/P1/project_1/project_1.runs/synth_1/receiver.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file receiver_utilization_synth.rpt -pb receiver_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 756.039 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Apr 17 17:52:31 2024...
