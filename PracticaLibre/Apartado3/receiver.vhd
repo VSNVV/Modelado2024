@@ -236,27 +236,44 @@ begin
     end if;
   end process;
 
+--  process(RDB_Out) -- Proceso que modela el circuito combinacional que valida si un dato es correcto o no
+--  variable num_1 : unsigned(3 downto 0):=(others=>'0');
+--  variable par: std_logic;
+--  begin
+--  num_1:= (others=>'0');
+--  for i in RDB_Out'range loop
+--    if RDB_Out(i) = '1' then
+--        num_1:= num_1+1;
+--    end if; 
+--  end loop;
+--  if num_1(0) = '0' then -- Verificamos que hay un numero par de 1
+--    par := '1';
+--  else 
+--    par := '0';
+--  end if;
+--  if par=RDB_Out(9) and RDB_Out(0) = '0' and RDB_Out(10) = '1' then
+--    Val_Out <= '1';
+--  else 
+--    Val_Out <= '0';
+--  end if;
+--  end process;
   process(RDB_Out) -- Proceso que modela el circuito combinacional que valida si un dato es correcto o no
-  variable num_1 : unsigned(3 downto 0):=(others=>'0');
-  variable par: std_logic;
-  begin
-  num_1:= (others=>'0');
-  for i in RDB_Out'range loop
-    if RDB_Out(i) = '1' then
-        num_1:= num_1;
-    end if; 
-  end loop;
-  if num_1(0) = '0' then -- Verificamos que hay un numero par de 1
-    par := '1';
-  else 
-    par := '0';
-  end if;
-  if par=RDB_Out(9) and RDB_Out(0) = '0' and RDB_Out(10) = '1' then
-    Val_Out <= '1';
-  else 
-    Val_Out <= '0';
-  end if;
+    variable aux_par: std_logic;
+    begin
+    aux_par:='1';
+    for i in 8 downto 1 loop
+      if RDB_Out(i) = '1' then
+          aux_par := not aux_par;
+      end if; 
+    end loop;
+    
+    if aux_par=RDB_Out(9) and RDB_Out(0) = '0' and RDB_Out(10) = '1' then
+      Val_Out <= '1';
+    else 
+      Val_Out <= '0';
+    end if;
   end process;
+
 
 --  process(STD_Act , RDB_Out, FSM_Val, CLK, RST) -- Proceso que modela el Registro que almacena los datos y los envia a la salida
 --  begin
