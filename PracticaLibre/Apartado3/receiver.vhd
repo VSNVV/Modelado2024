@@ -16,9 +16,9 @@ end receiver;
 architecture rtl of receiver is
 -- Declaracion de las Sennales y Constantes
 constant tiempoMuestreo : integer := 29; -- Constante del prescaler, 4.34us --> 4340ns --> 4340 / 15 = 289.33 --> 289.33 / 10 = 28.93 --> 29 CLK
+--constant tiempoMuestreo : integer := 31; -- Constante del prescaler, 4.34us --> 4340ns --> 4340 / 14 = 310 --> 310 / 10 = 31 --> 31 CLK
 constant numeroMuestras : integer := 15; -- Constante del numero de muestras que se hacen para cada bit
 constant numeroBits : integer := 11; -- Constante del numero de bits que se reciven
---constant tiempoMuestreo : integer := 31; -- Constante del prescaler, 4.34us --> 4340ns --> 4340 / 14 = 310 --> 310 / 10 = 31 --> 31 CLK
 signal PR_Cnt : unsigned(4 downto 0); -- Sennal del contador del Prescaler
 signal PR_FC : std_logic; -- Sennal de salida del Prescaler
 --signal FSM_PR : std_logic; -- Sennal que manda la FSM al Prescaler para que este siga contando o no, en caso de que no, se reincia a 0
@@ -33,7 +33,6 @@ signal RDM_Out : std_logic_vector(14 downto 0); -- Sennal de salida del Registro
 signal RDB_Out : std_logic_vector(10 downto 0); -- Sennal de salida del Registro de Desplazamiento que contiene los bits finales
 signal CntBin : std_logic; -- Sennal de salida del Circuito Combinacional que cuenta el numero de 1 y 0 de las muestras de RX
 signal Val_Out : std_logic; -- Sennal de salida del bloque combinacional que comprueba si un dato es correcto o no
-signal PR_Out : std_logic;
 type FSM is (Idle, Receiving, Outputing, Verifying, Error); --declaracion de la maquina de estados con los distintos casos posibles
 signal STD_Act: FSM; --estado actual de la maquina de estados
 
@@ -193,7 +192,7 @@ begin
   variable num1 : integer := 0; -- Variable que almacena el numero de 1
   begin
   num0:=0;
-  num1:=1;
+  num1:=0;
     -- Contamos el numero de 1 y 0 que hay
     for i in RDM_Out'range loop
       if RDM_Out(i) = '1' then
@@ -230,22 +229,24 @@ begin
         if STD_Act = idle then
             RDB_Out <= (others=>'0'); 
         elsif STD_Act = receiving then
+            if CntM_FC ='1' then
             RDB_Out <= CntBin & RDB_Out(10 downto 1);
+            end if;
         end if;
     end if;
   end process;
 
   process(RDB_Out) -- Proceso que modela el circuito combinacional que valida si un dato es correcto o no
-  variable num_1 : integer :=0;
-  variable par: std_logic:='0';
+  variable num_1 : unsigned(3 downto 0):=(others=>'0');
+  variable par: std_logic;
   begin
-  num_1:=0;
+  num_1:= (others=>'0');
   for i in RDB_Out'range loop
     if RDB_Out(i) = '1' then
-        num_1:= num_1+1;
+        num_1:= num_1;
     end if; 
   end loop;
-  if num_1 rem 2 = 0 then -- Verificamos que hay un numero par de 1
+  if num_1(0) = '0' then -- Verificamos que hay un numero par de 1
     par := '1';
   else 
     par := '0';
