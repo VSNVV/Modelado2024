@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100ticsg324-1L" LaunchTime="1713376751">
-  <File Type="PA-TCL" Name="receiver.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="receiver_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="receiver_reports.tcl"/>
-  <File Type="RDS-RDS" Name="receiver.vds"/>
-  <File Type="RDS-UTIL" Name="receiver_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="receiver_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="receiver.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="receiver_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="receiver_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100ticsg324-1L" LaunchTime="1713451976">
+  <File Type="PA-TCL" Name="test_receiver.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="test_receiver_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="test_receiver_reports.tcl"/>
+  <File Type="RDS-RDS" Name="test_receiver.vds"/>
+  <File Type="RDS-UTIL" Name="test_receiver_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="test_receiver_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="test_receiver.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="test_receiver_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="test_receiver_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../../PracticaLibre/Apartado3/receiver.vhd">
@@ -17,16 +17,16 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../PracticaLibre/Apartado3/pc_tx.vhd">
+    <File Path="$PPRDIR/../../PracticaLibre/Apartado3/test_receiver.vhd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="receiver"/>
+      <Option Name="TopModule" Val="test_receiver"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

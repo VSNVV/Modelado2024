@@ -290,6 +290,7 @@ begin
   begin
     if RST = '1' then
         dato_rx <= (others=> '0');
+        dato_rx_ok<='0';
     elsif CLK'event and CLK = '1' then
         if STD_Act = idle then
            dato_rx_ok <='0';
@@ -308,6 +309,7 @@ begin
     elsif CLK'event and CLK = '1' then
       case STD_Act is
         when Idle =>
+        error_recep <= '0';
           if RX = '0' then
             STD_Act <= Receiving;
           end if;
@@ -319,6 +321,7 @@ begin
           if Val_Out = '1' then
             STD_Act <= Outputing;
           else
+            error_recep<= '1';
             STD_Act <= Error;
           end if;
         when Outputing =>
