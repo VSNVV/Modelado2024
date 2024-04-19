@@ -144,7 +144,7 @@ begin
         if STD_Act = Idle then
             RDB_Out <= (others=>'0'); 
         elsif STD_Act = Receiving then
-            if CntM_FC ='1' then
+            if CntM_FC = '1' then
             RDB_Out <= CntBin & RDB_Out(10 downto 1);
             end if;
         end if;
@@ -172,8 +172,7 @@ begin
   begin
     if RST = '1' then
         dato_rx <= (others=> '0');
-        dato_rx_ok<='0';
-        error_recep <= '0';
+        dato_rx_ok <= '0';
     elsif CLK'event and CLK = '1' then
         if STD_Act = Idle then
            dato_rx_ok <='0';
