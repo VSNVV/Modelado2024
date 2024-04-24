@@ -1,0 +1,6 @@
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+WARNING: "C:\Xilinx\Vivado\2017.4\data/verilog/src/unisims/FDCE.v" Line 162: Timing violation in scope /top_system_tb/DUT/u_rx/FSM_sequential_STD_Act_reg[0]/TChk162_1955 at time 1618510045 ps $setuphold (posedge C,posedge D,(0:0:0),(0:0:0),notifier,in_clk_enable_p,in_clk_enable_p,C_dly,D_dly) 
+Failure: FIN CONTROLADO DE LA SIMULACION
+Time: 1852508282 ps  Iteration: 0  Process: /top_system_tb/u_PC_tx/line__35  File: C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/pc_tx.vhd
+$finish called at time : 1852508282 ps : File "C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/pc_tx.vhd" Line 81
