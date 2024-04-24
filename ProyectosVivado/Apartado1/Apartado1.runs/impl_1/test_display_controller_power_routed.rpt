@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date             : Fri Apr 19 21:19:44 2024
+| Date             : Wed Apr 24 12:24:34 2024
 | Host             : DESKTOP-L18CUH1 running 64-bit major release  (build 9200)
 | Command          : report_power -file test_display_controller_power_routed.rpt -pb test_display_controller_power_summary_routed.pb -rpx test_display_controller_power_routed.rpx
 | Design           : test_display_controller
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 0.087        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.004        |
+| Dynamic (W)              | 0.003        |
 | Device Static (W)        | 0.084        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 99.6         |
@@ -53,13 +53,14 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      106 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       28 |     63400 |            0.04 |
-|   Register     |    <0.001 |       62 |    126800 |            0.05 |
+| Slice Logic    |    <0.001 |      147 |       --- |             --- |
+|   LUT as Logic |    <0.001 |       38 |     63400 |            0.06 |
+|   Register     |    <0.001 |       77 |    126800 |            0.06 |
+|   CARRY4       |    <0.001 |        6 |     15850 |            0.04 |
 |   F7/F8 Muxes  |    <0.001 |        4 |     63400 |           <0.01 |
 |   Others       |     0.000 |        3 |       --- |             --- |
-| Signals        |    <0.001 |       81 |       --- |             --- |
-| I/O            |     0.003 |       27 |       210 |           12.86 |
+| Signals        |    <0.001 |      128 |       --- |             --- |
+| I/O            |     0.002 |       27 |       210 |           12.86 |
 | Static Power   |     0.084 |          |           |                 |
 | Total          |     0.087 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
@@ -71,7 +72,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       0.950 |     0.010 |       0.001 |      0.009 |
+| Vccint    |       0.950 |     0.011 |       0.001 |      0.009 |
 | Vccaux    |       1.800 |     0.016 |       0.000 |      0.016 |
 | Vcco33    |       3.300 |     0.005 |       0.001 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -140,7 +141,7 @@ Table of Contents
 +-------------------------+-----------+
 | Name                    | Power (W) |
 +-------------------------+-----------+
-| test_display_controller |     0.004 |
+| test_display_controller |     0.003 |
 |   U_DISPLAY             |    <0.001 |
 +-------------------------+-----------+
 
