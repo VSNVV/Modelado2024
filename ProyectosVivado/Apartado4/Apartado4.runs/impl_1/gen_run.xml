@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100ticsg324-1L" LaunchTime="1713555028">
+<GenRun Id="impl_1" LaunchPart="xc7a100ticsg324-1L" LaunchTime="1713968812">
   <File Type="PWROPT-DCP" Name="top_system_pwropt.dcp"/>
   <File Type="ROUTE-PWR" Name="top_system_power_routed.rpt"/>
   <File Type="PA-TCL" Name="top_system.tcl"/>
@@ -105,6 +105,7 @@
     <Filter Type="Constrs"/>
     <File Path="$PPRDIR/../../PracticaLibre/Apartado4/top_system.xdc">
       <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>

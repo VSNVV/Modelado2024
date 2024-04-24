@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/ProyectosVivado/Apartado4/Apartado4.runs/synth_1'
+HD_PWD='C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/ProyectosVivado/Apartado4/Apartado4.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

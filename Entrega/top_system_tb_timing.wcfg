@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="top_system_tb_time_impl.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="top_system_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="500161873074fs"></ZoomStartTime>
+      <ZoomEndTime time="500161878321fs"></ZoomEndTime>
+      <Cursor1Time time="718161770000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="136"></NameColumnWidth>
+      <ValueColumnWidth column_width="132"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="53" />
+   <wvobject fp_name="/top_system_tb/DUT/AND_70" type="array">
+      <obj_property name="ElementShortName">AND_70[7:0]</obj_property>
+      <obj_property name="ObjectShortName">AND_70[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/AND_70_OBUF" type="array">
+      <obj_property name="ElementShortName">AND_70_OBUF[7:0]</obj_property>
+      <obj_property name="ObjectShortName">AND_70_OBUF[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/BUSY" type="logic">
+      <obj_property name="ElementShortName">BUSY</obj_property>
+      <obj_property name="ObjectShortName">BUSY</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/BUSY_OBUF" type="logic">
+      <obj_property name="ElementShortName">BUSY_OBUF</obj_property>
+      <obj_property name="ObjectShortName">BUSY_OBUF</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/CLK" type="logic">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/CLK_IBUF" type="logic">
+      <obj_property name="ElementShortName">CLK_IBUF</obj_property>
+      <obj_property name="ObjectShortName">CLK_IBUF</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/CLK_IBUF_BUFG" type="logic">
+      <obj_property name="ElementShortName">CLK_IBUF_BUFG</obj_property>
+      <obj_property name="ObjectShortName">CLK_IBUF_BUFG</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/CS" type="logic">
+      <obj_property name="ElementShortName">CS</obj_property>
+      <obj_property name="ObjectShortName">CS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/CS_OBUF" type="logic">
+      <obj_property name="ElementShortName">CS_OBUF</obj_property>
+      <obj_property name="ObjectShortName">CS_OBUF</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/DATA_SPI_OK" type="logic">
+      <obj_property name="ElementShortName">DATA_SPI_OK</obj_property>
+      <obj_property name="ObjectShortName">DATA_SPI_OK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/DATO_RX_OK" type="logic">
+      <obj_property name="ElementShortName">DATO_RX_OK</obj_property>
+      <obj_property name="ObjectShortName">DATO_RX_OK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/DP" type="logic">
+      <obj_property name="ElementShortName">DP</obj_property>
+      <obj_property name="ObjectShortName">DP</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/DP_OBUF" type="logic">
+      <obj_property name="ElementShortName">DP_OBUF</obj_property>
+      <obj_property name="ObjectShortName">DP_OBUF</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/D_C" type="logic">
+      <obj_property name="ElementShortName">D_C</obj_property>
+      <obj_property name="ObjectShortName">D_C</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/D_C_OBUF" type="logic">
+      <obj_property name="ElementShortName">D_C_OBUF</obj_property>
+      <obj_property name="ObjectShortName">D_C_OBUF</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/LED" type="logic">
+      <obj_property name="ElementShortName">LED</obj_property>
+      <obj_property name="ObjectShortName">LED</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/LED_OBUF" type="logic">
+      <obj_property name="ElementShortName">LED_OBUF</obj_property>
+      <obj_property name="ObjectShortName">LED_OBUF</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/RES" type="logic">
+      <obj_property name="ElementShortName">RES</obj_property>
+      <obj_property name="ObjectShortName">RES</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/RES_OBUF" type="logic">
+      <obj_property name="ElementShortName">RES_OBUF</obj_property>
+      <obj_property name="ObjectShortName">RES_OBUF</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/RST" type="logic">
+      <obj_property name="ElementShortName">RST</obj_property>
+      <obj_property name="ObjectShortName">RST</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/RST_IBUF" type="logic">
+      <obj_property name="ElementShortName">RST_IBUF</obj_property>
+      <obj_property name="ObjectShortName">RST_IBUF</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/RX" type="logic">
+      <obj_property name="ElementShortName">RX</obj_property>
+      <obj_property name="ObjectShortName">RX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/RX_IBUF" type="logic">
+      <obj_property name="ElementShortName">RX_IBUF</obj_property>
+      <obj_property name="ObjectShortName">RX_IBUF</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/SCLK" type="logic">
+      <obj_property name="ElementShortName">SCLK</obj_property>
+      <obj_property name="ObjectShortName">SCLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/SCLK_OBUF" type="logic">
+      <obj_property name="ElementShortName">SCLK_OBUF</obj_property>
+      <obj_property name="ObjectShortName">SCLK_OBUF</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/SDIN" type="logic">
+      <obj_property name="ElementShortName">SDIN</obj_property>
+      <obj_property name="ObjectShortName">SDIN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/SDIN_OBUF" type="logic">
+      <obj_property name="ElementShortName">SDIN_OBUF</obj_property>
+      <obj_property name="ObjectShortName">SDIN_OBUF</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/SEG_AG" type="array">
+      <obj_property name="ElementShortName">SEG_AG[6:0]</obj_property>
+      <obj_property name="ObjectShortName">SEG_AG[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/SEG_AG_OBUF" type="array">
+      <obj_property name="ElementShortName">SEG_AG_OBUF[6:0]</obj_property>
+      <obj_property name="ObjectShortName">SEG_AG_OBUF[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/U_OLED_n_10" type="logic">
+      <obj_property name="ElementShortName">U_OLED_n_10</obj_property>
+      <obj_property name="ObjectShortName">U_OLED_n_10</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/U_OLED_n_11" type="logic">
+      <obj_property name="ElementShortName">U_OLED_n_11</obj_property>
+      <obj_property name="ObjectShortName">U_OLED_n_11</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/U_OLED_n_12" type="logic">
+      <obj_property name="ElementShortName">U_OLED_n_12</obj_property>
+      <obj_property name="ObjectShortName">U_OLED_n_12</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/U_OLED_n_13" type="logic">
+      <obj_property name="ElementShortName">U_OLED_n_13</obj_property>
+      <obj_property name="ObjectShortName">U_OLED_n_13</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/U_OLED_n_4" type="logic">
+      <obj_property name="ElementShortName">U_OLED_n_4</obj_property>
+      <obj_property name="ObjectShortName">U_OLED_n_4</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/U_OLED_n_6" type="logic">
+      <obj_property name="ElementShortName">U_OLED_n_6</obj_property>
+      <obj_property name="ObjectShortName">U_OLED_n_6</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/U_OLED_n_7" type="logic">
+      <obj_property name="ElementShortName">U_OLED_n_7</obj_property>
+      <obj_property name="ObjectShortName">U_OLED_n_7</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/U_OLED_n_8" type="logic">
+      <obj_property name="ElementShortName">U_OLED_n_8</obj_property>
+      <obj_property name="ObjectShortName">U_OLED_n_8</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/U_OLED_n_9" type="logic">
+      <obj_property name="ElementShortName">U_OLED_n_9</obj_property>
+      <obj_property name="ObjectShortName">U_OLED_n_9</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/U_SPI_n_4" type="logic">
+      <obj_property name="ElementShortName">U_SPI_n_4</obj_property>
+      <obj_property name="ObjectShortName">U_SPI_n_4</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/VBAT" type="logic">
+      <obj_property name="ElementShortName">VBAT</obj_property>
+      <obj_property name="ObjectShortName">VBAT</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/VDD" type="logic">
+      <obj_property name="ElementShortName">VDD</obj_property>
+      <obj_property name="ObjectShortName">VDD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/VDD_OBUF" type="logic">
+      <obj_property name="ElementShortName">VDD_OBUF</obj_property>
+      <obj_property name="ObjectShortName">VDD_OBUF</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/dato_rx" type="array">
+      <obj_property name="ElementShortName">dato_rx[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dato_rx[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/lopt" type="logic">
+      <obj_property name="ElementShortName">lopt</obj_property>
+      <obj_property name="ObjectShortName">lopt</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/p_0_in" type="logic">
+      <obj_property name="ElementShortName">p_0_in</obj_property>
+      <obj_property name="ObjectShortName">p_0_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/U_SPI_DEV/reg_aux" type="array">
+      <obj_property name="ElementShortName">reg_aux[7:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_aux[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/U_SPI_DEV/data_register" type="array">
+      <obj_property name="ElementShortName">data_register[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_register[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/U_SPI_DEV/command_register" type="array">
+      <obj_property name="ElementShortName">command_register[7:0]</obj_property>
+      <obj_property name="ObjectShortName">command_register[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/u_PC_tx/trama_tx" type="array">
+      <obj_property name="ElementShortName">trama_tx[10:0]</obj_property>
+      <obj_property name="ObjectShortName">trama_tx[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/u_PC_tx/dato_tx" type="array">
+      <obj_property name="ElementShortName">dato_tx[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dato_tx[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/U_Display/AND_70" type="array">
+      <obj_property name="ElementShortName">AND_70[7:0]</obj_property>
+      <obj_property name="ObjectShortName">AND_70[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/U_Display/SEG_AG" type="array">
+      <obj_property name="ElementShortName">SEG_AG[6:0]</obj_property>
+      <obj_property name="ObjectShortName">SEG_AG[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/U_Display/Displays" type="array">
+      <obj_property name="ElementShortName">Displays[8:1]</obj_property>
+      <obj_property name="ObjectShortName">Displays[8:1]</obj_property>
+   </wvobject>
+</wave_config>

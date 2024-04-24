@@ -16,25 +16,23 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_msg_config -id {HDL 9-1061} -limit 100000
-set_msg_config -id {HDL 9-1654} -limit 100000
 create_project -in_memory -part xc7a100ticsg324-1L
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/ProyectosVivado/Apartado4/Apartado4.cache/wt [current_project]
-set_property parent.project_path C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/ProyectosVivado/Apartado4/Apartado4.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/ProyectosVivado/Apartado4/Apartado4.cache/wt [current_project]
+set_property parent.project_path C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/ProyectosVivado/Apartado4/Apartado4.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/ProyectosVivado/Apartado4/Apartado4.cache/ip [current_project]
+set_property ip_output_repo c:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/ProyectosVivado/Apartado4/Apartado4.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {
-  C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado1/display_controller.vhd
-  C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado2/oled_controller.vhd
-  C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado3/receiver.vhd
-  C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado2/spi_controller.vhd
-  C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado4/top_system.vhd
+  C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado1/display_controller.vhd
+  C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado2/oled_controller.vhd
+  C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/receiver.vhd
+  C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado2/spi_controller.vhd
+  C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado4/top_system.vhd
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -44,9 +42,6 @@ read_vhdl -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado4/top_system.xdc
-set_property used_in_implementation false [get_files C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado4/top_system.xdc]
-
 
 synth_design -top top_system -part xc7a100ticsg324-1L
 

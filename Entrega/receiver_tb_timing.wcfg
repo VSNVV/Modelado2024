@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="receiver_tb_time_impl.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="receiver_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="353508282001fs"></ZoomEndTime>
+      <Cursor1Time time="343671981000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="136"></NameColumnWidth>
+      <ValueColumnWidth column_width="132"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="78" />
+   <wvobject fp_name="/receiver_tb/DUT/CntB_Cnt" type="array">
+      <obj_property name="ElementShortName">CntB_Cnt[3:0]</obj_property>
+      <obj_property name="ObjectShortName">CntB_Cnt[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/CntB_Cnt1" type="logic">
+      <obj_property name="ElementShortName">CntB_Cnt1</obj_property>
+      <obj_property name="ObjectShortName">CntB_Cnt1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/CntB_Cnt__0" type="array">
+      <obj_property name="ElementShortName">CntB_Cnt__0[3:0]</obj_property>
+      <obj_property name="ObjectShortName">CntB_Cnt__0[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/CntB_FC_i_1_n_0" type="logic">
+      <obj_property name="ElementShortName">CntB_FC_i_1_n_0</obj_property>
+      <obj_property name="ObjectShortName">CntB_FC_i_1_n_0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/CntB_FC_reg_n_0" type="logic">
+      <obj_property name="ElementShortName">CntB_FC_reg_n_0</obj_property>
+      <obj_property name="ObjectShortName">CntB_FC_reg_n_0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/CntM_Cnt" type="array">
+      <obj_property name="ElementShortName">CntM_Cnt[3:0]</obj_property>
+      <obj_property name="ObjectShortName">CntM_Cnt[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/CntM_Cnt1" type="logic">
+      <obj_property name="ElementShortName">CntM_Cnt1</obj_property>
+      <obj_property name="ObjectShortName">CntM_Cnt1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\CntM_Cnt[3]_i_1_n_0 " type="logic">
+      <obj_property name="ElementShortName">\CntM_Cnt[3]_i_1_n_0 </obj_property>
+      <obj_property name="ObjectShortName">\CntM_Cnt[3]_i_1_n_0 </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/CntM_Cnt__0" type="array">
+      <obj_property name="ElementShortName">CntM_Cnt__0[3:0]</obj_property>
+      <obj_property name="ObjectShortName">CntM_Cnt__0[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/CntM_FC_i_1_n_0" type="logic">
+      <obj_property name="ElementShortName">CntM_FC_i_1_n_0</obj_property>
+      <obj_property name="ObjectShortName">CntM_FC_i_1_n_0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/CntM_FC_reg_n_0" type="logic">
+      <obj_property name="ElementShortName">CntM_FC_reg_n_0</obj_property>
+      <obj_property name="ObjectShortName">CntM_FC_reg_n_0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/DATO_RX_OK" type="logic">
+      <obj_property name="ElementShortName">DATO_RX_OK</obj_property>
+      <obj_property name="ObjectShortName">DATO_RX_OK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/DATO_RX_OK_OBUF" type="logic">
+      <obj_property name="ElementShortName">DATO_RX_OK_OBUF</obj_property>
+      <obj_property name="ObjectShortName">DATO_RX_OK_OBUF</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/DATO_RX_OK_i_1_n_0" type="logic">
+      <obj_property name="ElementShortName">DATO_RX_OK_i_1_n_0</obj_property>
+      <obj_property name="ObjectShortName">DATO_RX_OK_i_1_n_0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/DATO_RX_OK_i_2_n_0" type="logic">
+      <obj_property name="ElementShortName">DATO_RX_OK_i_2_n_0</obj_property>
+      <obj_property name="ObjectShortName">DATO_RX_OK_i_2_n_0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\FSM_sequential_STD_Act[0]_i_1_n_0 " type="logic">
+      <obj_property name="ElementShortName">\FSM_sequential_STD_Act[0]_i_1_n_0 </obj_property>
+      <obj_property name="ObjectShortName">\FSM_sequential_STD_Act[0]_i_1_n_0 </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\FSM_sequential_STD_Act[1]_i_1_n_0 " type="logic">
+      <obj_property name="ElementShortName">\FSM_sequential_STD_Act[1]_i_1_n_0 </obj_property>
+      <obj_property name="ObjectShortName">\FSM_sequential_STD_Act[1]_i_1_n_0 </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\FSM_sequential_STD_Act[2]_i_1_n_0 " type="logic">
+      <obj_property name="ElementShortName">\FSM_sequential_STD_Act[2]_i_1_n_0 </obj_property>
+      <obj_property name="ObjectShortName">\FSM_sequential_STD_Act[2]_i_1_n_0 </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\FSM_sequential_STD_Act[2]_i_3_n_0 " type="logic">
+      <obj_property name="ElementShortName">\FSM_sequential_STD_Act[2]_i_3_n_0 </obj_property>
+      <obj_property name="ObjectShortName">\FSM_sequential_STD_Act[2]_i_3_n_0 </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\FSM_sequential_STD_Act[2]_i_4_n_0 " type="logic">
+      <obj_property name="ElementShortName">\FSM_sequential_STD_Act[2]_i_4_n_0 </obj_property>
+      <obj_property name="ObjectShortName">\FSM_sequential_STD_Act[2]_i_4_n_0 </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\PR_Cnt[0]_i_1_n_0 " type="logic">
+      <obj_property name="ElementShortName">\PR_Cnt[0]_i_1_n_0 </obj_property>
+      <obj_property name="ObjectShortName">\PR_Cnt[0]_i_1_n_0 </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\PR_Cnt[1]_i_1_n_0 " type="logic">
+      <obj_property name="ElementShortName">\PR_Cnt[1]_i_1_n_0 </obj_property>
+      <obj_property name="ObjectShortName">\PR_Cnt[1]_i_1_n_0 </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\PR_Cnt[2]_i_1_n_0 " type="logic">
+      <obj_property name="ElementShortName">\PR_Cnt[2]_i_1_n_0 </obj_property>
+      <obj_property name="ObjectShortName">\PR_Cnt[2]_i_1_n_0 </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\PR_Cnt[3]_i_1_n_0 " type="logic">
+      <obj_property name="ElementShortName">\PR_Cnt[3]_i_1_n_0 </obj_property>
+      <obj_property name="ObjectShortName">\PR_Cnt[3]_i_1_n_0 </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\PR_Cnt[4]_i_1_n_0 " type="logic">
+      <obj_property name="ElementShortName">\PR_Cnt[4]_i_1_n_0 </obj_property>
+      <obj_property name="ObjectShortName">\PR_Cnt[4]_i_1_n_0 </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\PR_Cnt[4]_i_2_n_0 " type="logic">
+      <obj_property name="ElementShortName">\PR_Cnt[4]_i_2_n_0 </obj_property>
+      <obj_property name="ObjectShortName">\PR_Cnt[4]_i_2_n_0 </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\PR_Cnt_reg_n_0_[0] " type="logic">
+      <obj_property name="ElementShortName">\PR_Cnt_reg_n_0_[0] </obj_property>
+      <obj_property name="ObjectShortName">\PR_Cnt_reg_n_0_[0] </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\PR_Cnt_reg_n_0_[1] " type="logic">
+      <obj_property name="ElementShortName">\PR_Cnt_reg_n_0_[1] </obj_property>
+      <obj_property name="ObjectShortName">\PR_Cnt_reg_n_0_[1] </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\PR_Cnt_reg_n_0_[2] " type="logic">
+      <obj_property name="ElementShortName">\PR_Cnt_reg_n_0_[2] </obj_property>
+      <obj_property name="ObjectShortName">\PR_Cnt_reg_n_0_[2] </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\PR_Cnt_reg_n_0_[3] " type="logic">
+      <obj_property name="ElementShortName">\PR_Cnt_reg_n_0_[3] </obj_property>
+      <obj_property name="ObjectShortName">\PR_Cnt_reg_n_0_[3] </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\PR_Cnt_reg_n_0_[4] " type="logic">
+      <obj_property name="ElementShortName">\PR_Cnt_reg_n_0_[4] </obj_property>
+      <obj_property name="ObjectShortName">\PR_Cnt_reg_n_0_[4] </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/PR_FC_i_1_n_0" type="logic">
+      <obj_property name="ElementShortName">PR_FC_i_1_n_0</obj_property>
+      <obj_property name="ObjectShortName">PR_FC_i_1_n_0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/PR_FC_reg_n_0" type="logic">
+      <obj_property name="ElementShortName">PR_FC_reg_n_0</obj_property>
+      <obj_property name="ObjectShortName">PR_FC_reg_n_0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/RDB_Out" type="array">
+      <obj_property name="ElementShortName">RDB_Out[10:0]</obj_property>
+      <obj_property name="ObjectShortName">RDB_Out[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\RDB_Out[10]_i_10_n_0 " type="logic">
+      <obj_property name="ElementShortName">\RDB_Out[10]_i_10_n_0 </obj_property>
+      <obj_property name="ObjectShortName">\RDB_Out[10]_i_10_n_0 </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\RDB_Out[10]_i_11_n_0 " type="logic">
+      <obj_property name="ElementShortName">\RDB_Out[10]_i_11_n_0 </obj_property>
+      <obj_property name="ObjectShortName">\RDB_Out[10]_i_11_n_0 </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\RDB_Out[10]_i_12_n_0 " type="logic">
+      <obj_property name="ElementShortName">\RDB_Out[10]_i_12_n_0 </obj_property>
+      <obj_property name="ObjectShortName">\RDB_Out[10]_i_12_n_0 </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\RDB_Out[10]_i_13_n_0 " type="logic">
+      <obj_property name="ElementShortName">\RDB_Out[10]_i_13_n_0 </obj_property>
+      <obj_property name="ObjectShortName">\RDB_Out[10]_i_13_n_0 </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\RDB_Out[10]_i_14_n_0 " type="logic">
+      <obj_property name="ElementShortName">\RDB_Out[10]_i_14_n_0 </obj_property>
+      <obj_property name="ObjectShortName">\RDB_Out[10]_i_14_n_0 </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\RDB_Out[10]_i_15_n_0 " type="logic">
+      <obj_property name="ElementShortName">\RDB_Out[10]_i_15_n_0 </obj_property>
+      <obj_property name="ObjectShortName">\RDB_Out[10]_i_15_n_0 </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\RDB_Out[10]_i_16_n_0 " type="logic">
+      <obj_property name="ElementShortName">\RDB_Out[10]_i_16_n_0 </obj_property>
+      <obj_property name="ObjectShortName">\RDB_Out[10]_i_16_n_0 </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\RDB_Out[10]_i_1_n_0 " type="logic">
+      <obj_property name="ElementShortName">\RDB_Out[10]_i_1_n_0 </obj_property>
+      <obj_property name="ObjectShortName">\RDB_Out[10]_i_1_n_0 </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\RDB_Out[10]_i_3_n_0 " type="logic">
+      <obj_property name="ElementShortName">\RDB_Out[10]_i_3_n_0 </obj_property>
+      <obj_property name="ObjectShortName">\RDB_Out[10]_i_3_n_0 </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\RDB_Out[10]_i_4_n_0 " type="logic">
+      <obj_property name="ElementShortName">\RDB_Out[10]_i_4_n_0 </obj_property>
+      <obj_property name="ObjectShortName">\RDB_Out[10]_i_4_n_0 </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\RDB_Out[10]_i_5_n_0 " type="logic">
+      <obj_property name="ElementShortName">\RDB_Out[10]_i_5_n_0 </obj_property>
+      <obj_property name="ObjectShortName">\RDB_Out[10]_i_5_n_0 </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\RDB_Out[10]_i_6_n_0 " type="logic">
+      <obj_property name="ElementShortName">\RDB_Out[10]_i_6_n_0 </obj_property>
+      <obj_property name="ObjectShortName">\RDB_Out[10]_i_6_n_0 </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\RDB_Out[10]_i_7_n_0 " type="logic">
+      <obj_property name="ElementShortName">\RDB_Out[10]_i_7_n_0 </obj_property>
+      <obj_property name="ObjectShortName">\RDB_Out[10]_i_7_n_0 </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\RDB_Out[10]_i_8_n_0 " type="logic">
+      <obj_property name="ElementShortName">\RDB_Out[10]_i_8_n_0 </obj_property>
+      <obj_property name="ObjectShortName">\RDB_Out[10]_i_8_n_0 </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\RDB_Out[10]_i_9_n_0 " type="logic">
+      <obj_property name="ElementShortName">\RDB_Out[10]_i_9_n_0 </obj_property>
+      <obj_property name="ObjectShortName">\RDB_Out[10]_i_9_n_0 </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\RDB_Out_reg_n_0_[0] " type="logic">
+      <obj_property name="ElementShortName">\RDB_Out_reg_n_0_[0] </obj_property>
+      <obj_property name="ObjectShortName">\RDB_Out_reg_n_0_[0] </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\RDB_Out_reg_n_0_[10] " type="logic">
+      <obj_property name="ElementShortName">\RDB_Out_reg_n_0_[10] </obj_property>
+      <obj_property name="ObjectShortName">\RDB_Out_reg_n_0_[10] </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\RDB_Out_reg_n_0_[1] " type="logic">
+      <obj_property name="ElementShortName">\RDB_Out_reg_n_0_[1] </obj_property>
+      <obj_property name="ObjectShortName">\RDB_Out_reg_n_0_[1] </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\RDB_Out_reg_n_0_[8] " type="logic">
+      <obj_property name="ElementShortName">\RDB_Out_reg_n_0_[8] </obj_property>
+      <obj_property name="ObjectShortName">\RDB_Out_reg_n_0_[8] </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/RDM_Out" type="array">
+      <obj_property name="ElementShortName">RDM_Out[14:0]</obj_property>
+      <obj_property name="ObjectShortName">RDM_Out[14:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/STD_Act" type="array">
+      <obj_property name="ElementShortName">STD_Act[2:0]</obj_property>
+      <obj_property name="ObjectShortName">STD_Act[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/Val_Out" type="logic">
+      <obj_property name="ElementShortName">Val_Out</obj_property>
+      <obj_property name="ObjectShortName">Val_Out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/clk_IBUF" type="logic">
+      <obj_property name="ElementShortName">clk_IBUF</obj_property>
+      <obj_property name="ObjectShortName">clk_IBUF</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/clk_IBUF_BUFG" type="logic">
+      <obj_property name="ElementShortName">clk_IBUF_BUFG</obj_property>
+      <obj_property name="ObjectShortName">clk_IBUF_BUFG</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/\dato_rx[7]_i_1_n_0 " type="logic">
+      <obj_property name="ElementShortName">\dato_rx[7]_i_1_n_0 </obj_property>
+      <obj_property name="ObjectShortName">\dato_rx[7]_i_1_n_0 </obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/dato_rx_OBUF" type="array">
+      <obj_property name="ElementShortName">dato_rx_OBUF[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dato_rx_OBUF[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/error_recep" type="logic">
+      <obj_property name="ElementShortName">error_recep</obj_property>
+      <obj_property name="ObjectShortName">error_recep</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/error_recep0" type="logic">
+      <obj_property name="ElementShortName">error_recep0</obj_property>
+      <obj_property name="ObjectShortName">error_recep0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/error_recep_OBUF" type="logic">
+      <obj_property name="ElementShortName">error_recep_OBUF</obj_property>
+      <obj_property name="ObjectShortName">error_recep_OBUF</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/p_0_in" type="logic">
+      <obj_property name="ElementShortName">p_0_in</obj_property>
+      <obj_property name="ObjectShortName">p_0_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/p_0_in__0" type="logic">
+      <obj_property name="ElementShortName">p_0_in__0</obj_property>
+      <obj_property name="ObjectShortName">p_0_in__0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/p_1_in" type="logic">
+      <obj_property name="ElementShortName">p_1_in</obj_property>
+      <obj_property name="ObjectShortName">p_1_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/p_2_in" type="logic">
+      <obj_property name="ElementShortName">p_2_in</obj_property>
+      <obj_property name="ObjectShortName">p_2_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/p_3_in" type="logic">
+      <obj_property name="ElementShortName">p_3_in</obj_property>
+      <obj_property name="ObjectShortName">p_3_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/p_4_in" type="logic">
+      <obj_property name="ElementShortName">p_4_in</obj_property>
+      <obj_property name="ObjectShortName">p_4_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/p_5_in" type="logic">
+      <obj_property name="ElementShortName">p_5_in</obj_property>
+      <obj_property name="ObjectShortName">p_5_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/p_6_in" type="logic">
+      <obj_property name="ElementShortName">p_6_in</obj_property>
+      <obj_property name="ObjectShortName">p_6_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/rst_IBUF" type="logic">
+      <obj_property name="ElementShortName">rst_IBUF</obj_property>
+      <obj_property name="ObjectShortName">rst_IBUF</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/rx" type="logic">
+      <obj_property name="ElementShortName">rx</obj_property>
+      <obj_property name="ObjectShortName">rx</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/rx_IBUF" type="logic">
+      <obj_property name="ElementShortName">rx_IBUF</obj_property>
+      <obj_property name="ObjectShortName">rx_IBUF</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/DUT/dato_rx" type="array">
+      <obj_property name="ElementShortName">dato_rx[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dato_rx[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/receiver_tb/u_tx/dato_tx" type="array">
+      <obj_property name="ElementShortName">dato_tx[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dato_tx[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+</wave_config>

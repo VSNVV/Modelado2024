@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100ticsg324-1L" LaunchTime="1713554740">
-  <File Type="PWROPT-DCP" Name="test_receiver_pwropt.dcp"/>
-  <File Type="ROUTE-PWR" Name="test_receiver_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="test_receiver.tcl"/>
-  <File Type="ROUTE-PWR-SUM" Name="test_receiver_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="test_receiver_reports.tcl"/>
-  <File Type="BG-DRC" Name="test_receiver.drc"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="test_receiver_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="test_receiver_timing_summary_init.rpt"/>
-  <File Type="OPT-HWDEF" Name="test_receiver.hwdef"/>
-  <File Type="OPT-DCP" Name="test_receiver_opt.dcp"/>
-  <File Type="OPT-DRC" Name="test_receiver_drc_opted.rpt"/>
-  <File Type="OPT-TIMING" Name="test_receiver_timing_summary_opted.rpt"/>
-  <File Type="PWROPT-DRC" Name="test_receiver_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="test_receiver_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="test_receiver_placed.dcp"/>
-  <File Type="PLACE-IO" Name="test_receiver_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="test_receiver_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="test_receiver_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="test_receiver_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="test_receiver_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="test_receiver_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="test_receiver_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-TIMING" Name="test_receiver_timing_summary_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="test_receiver_postplace_pwropt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="test_receiver_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="test_receiver_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="test_receiver_drc_physopted.rpt"/>
-  <File Type="BG-BIT" Name="test_receiver.bit"/>
-  <File Type="PHYSOPT-TIMING" Name="test_receiver_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="test_receiver_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="test_receiver_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="test_receiver_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="test_receiver_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="test_receiver_drc_routed.pb"/>
-  <File Type="BITSTR-MSK" Name="test_receiver.msk"/>
-  <File Type="ROUTE-DRC-RPX" Name="test_receiver_drc_routed.rpx"/>
-  <File Type="BG-BGN" Name="test_receiver.bgn"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="test_receiver_methodology_drc_routed.rpt"/>
-  <File Type="BITSTR-RBT" Name="test_receiver.rbt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="test_receiver_methodology_drc_routed.rpx"/>
-  <File Type="BG-BIN" Name="test_receiver.bin"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="test_receiver_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="test_receiver_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="test_receiver_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="test_receiver_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="test_receiver_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="test_receiver_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="test_receiver_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="test_receiver_incremental_reuse_routed.rpt"/>
-  <File Type="RDI-RDI" Name="test_receiver.vdi"/>
-  <File Type="ROUTE-CLK" Name="test_receiver_clock_utilization_routed.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="test_receiver_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="test_receiver_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="test_receiver_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="test_receiver_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="test_receiver_timing_summary_postroute_physopted.rpx"/>
-  <File Type="BITSTR-NKY" Name="test_receiver.nky"/>
-  <File Type="BITSTR-BMM" Name="test_receiver_bd.bmm"/>
-  <File Type="BITSTR-MMI" Name="test_receiver.mmi"/>
+<GenRun Id="impl_1" LaunchPart="xc7a100ticsg324-1L" LaunchTime="1713967021">
+  <File Type="PWROPT-DCP" Name="receiver_pwropt.dcp"/>
+  <File Type="ROUTE-PWR" Name="receiver_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="receiver.tcl"/>
+  <File Type="ROUTE-PWR-SUM" Name="receiver_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="receiver_reports.tcl"/>
+  <File Type="BG-DRC" Name="receiver.drc"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="receiver_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="receiver_timing_summary_init.rpt"/>
+  <File Type="OPT-HWDEF" Name="receiver.hwdef"/>
+  <File Type="OPT-DCP" Name="receiver_opt.dcp"/>
+  <File Type="OPT-DRC" Name="receiver_drc_opted.rpt"/>
+  <File Type="OPT-TIMING" Name="receiver_timing_summary_opted.rpt"/>
+  <File Type="PWROPT-DRC" Name="receiver_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="receiver_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="receiver_placed.dcp"/>
+  <File Type="PLACE-IO" Name="receiver_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="receiver_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="receiver_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="receiver_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="receiver_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="receiver_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="receiver_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="receiver_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="receiver_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="receiver_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="receiver_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="receiver_drc_physopted.rpt"/>
+  <File Type="BG-BIT" Name="receiver.bit"/>
+  <File Type="PHYSOPT-TIMING" Name="receiver_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="receiver_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="receiver_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="receiver_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="receiver_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="receiver_drc_routed.pb"/>
+  <File Type="BITSTR-MSK" Name="receiver.msk"/>
+  <File Type="ROUTE-DRC-RPX" Name="receiver_drc_routed.rpx"/>
+  <File Type="BG-BGN" Name="receiver.bgn"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="receiver_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-RBT" Name="receiver.rbt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="receiver_methodology_drc_routed.rpx"/>
+  <File Type="BG-BIN" Name="receiver.bin"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="receiver_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="receiver_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="receiver_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="receiver_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="receiver_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="receiver_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="receiver_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="receiver_incremental_reuse_routed.rpt"/>
+  <File Type="RDI-RDI" Name="receiver.vdi"/>
+  <File Type="ROUTE-CLK" Name="receiver_clock_utilization_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="receiver_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="receiver_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="receiver_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="receiver_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="receiver_timing_summary_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="receiver.nky"/>
+  <File Type="BITSTR-BMM" Name="receiver_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="receiver.mmi"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="test_receiver.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="test_receiver.sysdef"/>
+  <File Type="BITSTR-LTX" Name="receiver.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="receiver.sysdef"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
@@ -71,31 +71,28 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../PracticaLibre/Apartado3/test_receiver.vhd">
+    <File Path="$PPRDIR/../../PracticaLibre/Apartado3/pc_tx.vhd">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="test_receiver"/>
+      <Option Name="TopModule" Val="receiver"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
-    <File Path="$PPRDIR/../../PracticaLibre/Apartado3/test_receiver.xdc">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>

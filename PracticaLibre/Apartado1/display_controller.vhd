@@ -13,8 +13,8 @@ end display_controller;
 
 architecture rtl of display_controller is
 -- Declaracion de sennales
-constant CTE_ANDS      : integer := 5e6;   -- para la implementacion
---constant CTE_ANDS  : integer := 200;  -- para la simulacion
+--constant CTE_ANDS      : integer := 5e6;   -- para la implementacion
+constant CTE_ANDS  : integer := 200;  -- para la simulacion
 signal CntReg : integer range 0 to CTE_ANDS - 1;
 signal RDOut : std_logic_vector(31 downto 0); -- Sennal de salida del Registro de Desplazamiento
 signal PROut : std_logic; -- Sennal de salida del Prescaler

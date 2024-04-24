@@ -2,12 +2,12 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Fri Apr 19 21:00:35 2024
-# Process ID: 3260
-# Current directory: C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/ProyectosVivado/Apartado4/Apartado4.runs/synth_1
+# Start of session at: Wed Apr 24 16:26:53 2024
+# Process ID: 18576
+# Current directory: C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/ProyectosVivado/Apartado4/Apartado4.runs/synth_1
 # Command line: vivado.exe -log top_system.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_system.tcl
-# Log file: C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/ProyectosVivado/Apartado4/Apartado4.runs/synth_1/top_system.vds
-# Journal file: C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/ProyectosVivado/Apartado4/Apartado4.runs/synth_1\vivado.jou
+# Log file: C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/ProyectosVivado/Apartado4/Apartado4.runs/synth_1/top_system.vds
+# Journal file: C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/ProyectosVivado/Apartado4/Apartado4.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source top_system.tcl -notrace
 Command: synth_design -top top_system -part xc7a100ticsg324-1L
@@ -15,67 +15,37 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100ti'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100ti'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 5516 
+INFO: Helper process launched with PID 3920 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 370.902 ; gain = 97.465
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 343.574 ; gain = 100.730
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'top_system' [C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado4/top_system.vhd:25]
-INFO: [Synth 8-638] synthesizing module 'receiver' [C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado3/receiver.vhd:15]
-INFO: [Synth 8-256] done synthesizing module 'receiver' (1#1) [C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado3/receiver.vhd:15]
-INFO: [Synth 8-638] synthesizing module 'display_controller' [C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado1/display_controller.vhd:14]
-INFO: [Synth 8-226] default block is never used [C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado1/display_controller.vhd:82]
-INFO: [Synth 8-226] default block is never used [C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado1/display_controller.vhd:106]
-INFO: [Synth 8-226] default block is never used [C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado1/display_controller.vhd:172]
-INFO: [Synth 8-256] done synthesizing module 'display_controller' (2#1) [C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado1/display_controller.vhd:14]
-INFO: [Synth 8-638] synthesizing module 'oled_controller' [C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado2/oled_controller.vhd:20]
-INFO: [Synth 8-256] done synthesizing module 'oled_controller' (3#1) [C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado2/oled_controller.vhd:20]
-INFO: [Synth 8-638] synthesizing module 'spi_controller' [C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado2/spi_controller.vhd:18]
-INFO: [Synth 8-256] done synthesizing module 'spi_controller' (4#1) [C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado2/spi_controller.vhd:18]
-INFO: [Synth 8-256] done synthesizing module 'top_system' (5#1) [C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado4/top_system.vhd:25]
+INFO: [Synth 8-638] synthesizing module 'top_system' [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado4/top_system.vhd:25]
+INFO: [Synth 8-638] synthesizing module 'receiver' [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/receiver.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'receiver' (1#1) [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado3/receiver.vhd:15]
+INFO: [Synth 8-638] synthesizing module 'display_controller' [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado1/display_controller.vhd:14]
+INFO: [Synth 8-226] default block is never used [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado1/display_controller.vhd:82]
+INFO: [Synth 8-226] default block is never used [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado1/display_controller.vhd:106]
+INFO: [Synth 8-226] default block is never used [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado1/display_controller.vhd:172]
+INFO: [Synth 8-256] done synthesizing module 'display_controller' (2#1) [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado1/display_controller.vhd:14]
+INFO: [Synth 8-638] synthesizing module 'oled_controller' [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado2/oled_controller.vhd:20]
+INFO: [Synth 8-256] done synthesizing module 'oled_controller' (3#1) [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado2/oled_controller.vhd:20]
+INFO: [Synth 8-638] synthesizing module 'spi_controller' [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado2/spi_controller.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'spi_controller' (4#1) [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado2/spi_controller.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'top_system' (5#1) [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado4/top_system.vhd:25]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 423.488 ; gain = 150.051
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 396.406 ; gain = 153.562
 ---------------------------------------------------------------------------------
-
-Report Check Netlist: 
-+------+------------------+-------+---------+-------+------------------+
-|      |Item              |Errors |Warnings |Status |Description       |
-+------+------------------+-------+---------+-------+------------------+
-|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
-+------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 423.488 ; gain = 150.051
----------------------------------------------------------------------------------
-INFO: [Device 21-403] Loading part xc7a100ticsg324-1L
-INFO: [Project 1-570] Preparing netlist for logic optimization
-
-Processing XDC Constraints
-Initializing timing engine
-Parsing XDC File [C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado4/top_system.xdc]
-Finished Parsing XDC File [C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado4/top_system.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado4/top_system.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_system_propImpl.xdc].
-Resolution: To avoid this warning, move constraints listed in [.Xil/top_system_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Completed Processing XDC Constraints
-
-INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
-
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 779.566 ; gain = 0.000
----------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 779.566 ; gain = 506.129
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 396.406 ; gain = 153.562
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100ticsg324-1L
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 779.566 ; gain = 506.129
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 396.406 ; gain = 153.562
 ---------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Applying 'set_property' XDC Constraints
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 779.566 ; gain = 506.129
----------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100ticsg324-1L
 INFO: [Synth 8-802] inferred FSM for state register 'STD_Act_reg' in module 'receiver'
 INFO: [Synth 8-5546] ROM "PR_FC" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "DATO_RX_OK" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
@@ -108,11 +78,11 @@ INFO: [Synth 8-5546] ROM "state_cfg" won't be mapped to RAM because it is too sp
 INFO: [Synth 8-5544] ROM "END_TX" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "DATA_SPI_OK" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "state_dec" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-WARNING: [Synth 8-6014] Unused sequential element DOUT_dec_reg was removed.  [C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado2/oled_controller.vhd:581]
-WARNING: [Synth 8-6014] Unused sequential element cnt_1ms_reg was removed.  [C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado2/oled_controller.vhd:258]
-WARNING: [Synth 8-6014] Unused sequential element cnt_msg_reg was removed.  [C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado2/oled_controller.vhd:273]
-WARNING: [Synth 8-6014] Unused sequential element cnt_cmd_glob_reg was removed.  [C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado2/oled_controller.vhd:304]
-WARNING: [Synth 8-6014] Unused sequential element cnt_ADDR_cfg_reg was removed.  [C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado2/oled_controller.vhd:457]
+WARNING: [Synth 8-6014] Unused sequential element DOUT_dec_reg was removed.  [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado2/oled_controller.vhd:581]
+WARNING: [Synth 8-6014] Unused sequential element cnt_1ms_reg was removed.  [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado2/oled_controller.vhd:258]
+WARNING: [Synth 8-6014] Unused sequential element cnt_msg_reg was removed.  [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado2/oled_controller.vhd:273]
+WARNING: [Synth 8-6014] Unused sequential element cnt_cmd_glob_reg was removed.  [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado2/oled_controller.vhd:304]
+WARNING: [Synth 8-6014] Unused sequential element cnt_ADDR_cfg_reg was removed.  [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado2/oled_controller.vhd:457]
 INFO: [Synth 8-5546] ROM "FC" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
@@ -172,7 +142,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_cfg_reg' using encod
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_dec_reg' using encoding 'sequential' in module 'oled_controller'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 779.566 ; gain = 506.129
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 437.324 ; gain = 194.480
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -180,6 +150,7 @@ Report RTL Partitions:
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
+No constraint files found.
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -345,17 +316,18 @@ BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
+No constraint files found.
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "U_DISP/PROut" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "U_OLED/ce" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "U_OLED/aux_end" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-6014] Unused sequential element U_OLED/DOUT_dec_reg was removed.  [C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado2/oled_controller.vhd:581]
-WARNING: [Synth 8-6014] Unused sequential element U_OLED/cnt_1ms_reg was removed.  [C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado2/oled_controller.vhd:258]
-WARNING: [Synth 8-6014] Unused sequential element U_OLED/cnt_msg_reg was removed.  [C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado2/oled_controller.vhd:273]
-WARNING: [Synth 8-6014] Unused sequential element U_OLED/cnt_ADDR_cfg_reg was removed.  [C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado2/oled_controller.vhd:457]
-WARNING: [Synth 8-6014] Unused sequential element U_OLED/cnt_cmd_glob_reg was removed.  [C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/PracticaLibre/Apartado2/oled_controller.vhd:304]
+WARNING: [Synth 8-6014] Unused sequential element U_OLED/DOUT_dec_reg was removed.  [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado2/oled_controller.vhd:581]
+WARNING: [Synth 8-6014] Unused sequential element U_OLED/cnt_1ms_reg was removed.  [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado2/oled_controller.vhd:258]
+WARNING: [Synth 8-6014] Unused sequential element U_OLED/cnt_msg_reg was removed.  [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado2/oled_controller.vhd:273]
+WARNING: [Synth 8-6014] Unused sequential element U_OLED/cnt_ADDR_cfg_reg was removed.  [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado2/oled_controller.vhd:457]
+WARNING: [Synth 8-6014] Unused sequential element U_OLED/cnt_cmd_glob_reg was removed.  [C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/PracticaLibre/Apartado2/oled_controller.vhd:304]
 INFO: [Synth 8-3886] merging instance 'U_OLED/VAL_TIME_reg[5]' (FDCE) to 'U_OLED/VAL_TIME_reg[2]'
 INFO: [Synth 8-3886] merging instance 'U_OLED/VAL_TIME_reg[6]' (FDCE) to 'U_OLED/VAL_TIME_reg[2]'
 INFO: [Synth 8-3886] merging instance 'U_OLED/VAL_TIME_reg[4]' (FDCE) to 'U_OLED/VAL_TIME_reg[1]'
@@ -364,7 +336,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U_OLED/V
 INFO: [Synth 8-3886] merging instance 'U_OLED/VAL_TIME_reg[0]' (FDPE) to 'U_OLED/VBAT_reg'
 WARNING: [Synth 8-3332] Sequential element (U_OLED/VAL_TIME_reg[1]) is unused and will be removed from module top_system.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 779.566 ; gain = 506.129
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 561.191 ; gain = 318.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -387,17 +359,12 @@ Report RTL Partitions:
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
----------------------------------------------------------------------------------
-Start Applying XDC Timing Constraints
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 779.566 ; gain = 506.129
----------------------------------------------------------------------------------
+No constraint files found.
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 780.668 ; gain = 507.230
+Finished Timing Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 561.191 ; gain = 318.348
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -410,7 +377,7 @@ Start Technology Mapping
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-4480] The timing for the instance U_OLED/DOUT_dec_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 792.984 ; gain = 519.547
+Finished Technology Mapping : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 561.191 ; gain = 318.348
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -434,7 +401,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 792.984 ; gain = 519.547
+Finished IO Insertion : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 561.191 ; gain = 318.348
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -447,7 +414,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 792.984 ; gain = 519.547
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 561.191 ; gain = 318.348
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -459,25 +426,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 792.984 ; gain = 519.547
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 561.191 ; gain = 318.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 792.984 ; gain = 519.547
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 561.191 ; gain = 318.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 792.984 ; gain = 519.547
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 561.191 ; gain = 318.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 792.984 ; gain = 519.547
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 561.191 ; gain = 318.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -521,11 +488,11 @@ Report Instance Areas:
 |5     |  u_rx   |receiver           |   111|
 +------+---------+-------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 792.984 ; gain = 519.547
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 561.191 ; gain = 318.348
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 11 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 792.984 ; gain = 163.469
-Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 792.984 ; gain = 519.547
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 561.191 ; gain = 318.348
+Synthesis Optimization Complete : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 561.191 ; gain = 318.348
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 11 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -535,10 +502,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-73 Infos, 11 Warnings, 0 Critical Warnings and 0 Errors encountered.
+70 Infos, 11 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 792.984 ; gain = 532.266
-INFO: [Common 17-1381] The checkpoint 'C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/ProyectosVivado/Apartado4/Apartado4.runs/synth_1/top_system.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 652.875 ; gain = 423.047
+INFO: [Common 17-1381] The checkpoint 'C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/ProyectosVivado/Apartado4/Apartado4.runs/synth_1/top_system.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_system_utilization_synth.rpt -pb top_system_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 792.984 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Fri Apr 19 21:01:14 2024...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 652.875 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Apr 24 16:27:10 2024...

@@ -60,26 +60,88 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {HDL 9-1061} -limit 100000
-set_msg_config -id {HDL 9-1654} -limit 100000
 
-start_step write_bitstream
-set ACTIVE_STEP write_bitstream
+start_step init_design
+set ACTIVE_STEP init_design
 set rc [catch {
-  create_msg_db write_bitstream.pb
-  open_checkpoint top_system_routed.dcp
-  set_property webtalk.parent_dir C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/ProyectosVivado/Apartado4/Apartado4.cache/wt [current_project]
-  catch { write_mem_info -force top_system.mmi }
-  write_bitstream -force top_system.bit 
-  catch {write_debug_probes -quiet -force top_system}
-  catch {file copy -force top_system.ltx debug_nets.ltx}
-  close_msg_db -file write_bitstream.pb
+  create_msg_db init_design.pb
+  create_project -in_memory -part xc7a100ticsg324-1L
+  set_property design_mode GateLvl [current_fileset]
+  set_param project.singleFileAddWarning.threshold 0
+  set_property webtalk.parent_dir C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/ProyectosVivado/Apartado4/Apartado4.cache/wt [current_project]
+  set_property parent.project_path C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/ProyectosVivado/Apartado4/Apartado4.xpr [current_project]
+  set_property ip_output_repo C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/ProyectosVivado/Apartado4/Apartado4.cache/ip [current_project]
+  set_property ip_cache_permissions {read write} [current_project]
+  add_files -quiet C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/ProyectosVivado/Apartado4/Apartado4.runs/synth_1/top_system.dcp
+  link_design -top top_system -part xc7a100ticsg324-1L
+  close_msg_db -file init_design.pb
 } RESULT]
 if {$rc} {
-  step_failed write_bitstream
+  step_failed init_design
   return -code error $RESULT
 } else {
-  end_step write_bitstream
+  end_step init_design
+  unset ACTIVE_STEP 
+}
+
+start_step opt_design
+set ACTIVE_STEP opt_design
+set rc [catch {
+  create_msg_db opt_design.pb
+  opt_design 
+  write_checkpoint -force top_system_opt.dcp
+  create_report "impl_1_opt_report_drc_0" "report_drc -file top_system_drc_opted.rpt -pb top_system_drc_opted.pb -rpx top_system_drc_opted.rpx"
+  close_msg_db -file opt_design.pb
+} RESULT]
+if {$rc} {
+  step_failed opt_design
+  return -code error $RESULT
+} else {
+  end_step opt_design
+  unset ACTIVE_STEP 
+}
+
+start_step place_design
+set ACTIVE_STEP place_design
+set rc [catch {
+  create_msg_db place_design.pb
+  implement_debug_core 
+  place_design 
+  write_checkpoint -force top_system_placed.dcp
+  create_report "impl_1_place_report_io_0" "report_io -file top_system_io_placed.rpt"
+  create_report "impl_1_place_report_utilization_0" "report_utilization -file top_system_utilization_placed.rpt -pb top_system_utilization_placed.pb"
+  create_report "impl_1_place_report_control_sets_0" "report_control_sets -verbose -file top_system_control_sets_placed.rpt"
+  close_msg_db -file place_design.pb
+} RESULT]
+if {$rc} {
+  step_failed place_design
+  return -code error $RESULT
+} else {
+  end_step place_design
+  unset ACTIVE_STEP 
+}
+
+start_step route_design
+set ACTIVE_STEP route_design
+set rc [catch {
+  create_msg_db route_design.pb
+  route_design 
+  write_checkpoint -force top_system_routed.dcp
+  create_report "impl_1_route_report_drc_0" "report_drc -file top_system_drc_routed.rpt -pb top_system_drc_routed.pb -rpx top_system_drc_routed.rpx"
+  create_report "impl_1_route_report_methodology_0" "report_methodology -file top_system_methodology_drc_routed.rpt -pb top_system_methodology_drc_routed.pb -rpx top_system_methodology_drc_routed.rpx"
+  create_report "impl_1_route_report_power_0" "report_power -file top_system_power_routed.rpt -pb top_system_power_summary_routed.pb -rpx top_system_power_routed.rpx"
+  create_report "impl_1_route_report_route_status_0" "report_route_status -file top_system_route_status.rpt -pb top_system_route_status.pb"
+  create_report "impl_1_route_report_timing_summary_0" "report_timing_summary -max_paths 10 -file top_system_timing_summary_routed.rpt -rpx top_system_timing_summary_routed.rpx -warn_on_violation "
+  create_report "impl_1_route_report_incremental_reuse_0" "report_incremental_reuse -file top_system_incremental_reuse_routed.rpt"
+  create_report "impl_1_route_report_clock_utilization_0" "report_clock_utilization -file top_system_clock_utilization_routed.rpt"
+  close_msg_db -file route_design.pb
+} RESULT]
+if {$rc} {
+  write_checkpoint -force top_system_routed_error.dcp
+  step_failed route_design
+  return -code error $RESULT
+} else {
+  end_step route_design
   unset ACTIVE_STEP 
 }
 

@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/victorsanavia/Documents/RepositoriosGit/Modelado2024/ProyectosVivado/Apartado3/Apartado3.runs/synth_1'
+HD_PWD='C:/Users/34638/Desktop/Uni/Tercero/SegundoCuatri/Modelado_L/Laboratorio/Modelado2024/ProyectosVivado/Apartado3/Apartado3.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log test_receiver.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source test_receiver.tcl
+EAStep vivado -log receiver.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source receiver.tcl
