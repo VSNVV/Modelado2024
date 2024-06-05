@@ -106,7 +106,7 @@ begin
   begin
     if RST = '1' then
       RDM_Out <= (others => '0');
-    elsif (CLK'event and CLK = '1') then
+    elsif CLK'event and CLK = '1' then
       if PR_FC = '1' then
         -- Cada ciclo de reloj cogemos una muestra de RX, y como empezamos con el bit de menor peso, desplazamos de der a izq
         RDM_Out <= RX & RDM_Out(14 downto 1);
