@@ -14,8 +14,8 @@ end display_controller;
 architecture rtl of display_controller is
 -- Declaracion de sennales
 -- Como somos el puesto 4, nuestro TD debe durar 1ms, tenemos una sennal de 100MHZ, por tanto tardaremos 100000 ciclos de reloj en llegar a 1ms
-constant CTE_ANDS      : integer := 100000;   -- para la implementacion
---constant CTE_ANDS  : integer := 200;  -- para la simulacion Puesto 4, por tanto, 4 * 50 = 200
+--constant CTE_ANDS      : integer := 100000;   -- para la implementacion
+constant CTE_ANDS  : integer := 200;  -- para la simulacion Puesto 4, por tanto, 4 * 50 = 200
 signal CntReg : integer range 0 to CTE_ANDS - 1;
 signal RDOut : std_logic_vector(31 downto 0); -- Sennal de salida del Registro de Desplazamiento
 signal PROut : std_logic; -- Sennal de salida del Prescaler

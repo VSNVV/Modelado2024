@@ -1,4 +1,0 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "V:/Programacion/RepositoriosGit/Modelado2024/PracticaLibre/Apartado1/display_controller.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity display_controller
-INFO: [VRFC 10-163] Analyzing VHDL file "V:/Programacion/RepositoriosGit/Modelado2024/PracticaLibre/Apartado1/display_controller_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity display_controller_tb

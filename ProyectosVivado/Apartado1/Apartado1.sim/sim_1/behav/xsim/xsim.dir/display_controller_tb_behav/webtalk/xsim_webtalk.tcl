@@ -1,6 +1,6 @@
 webtalk_init -webtalk_dir V:/Programacion/RepositoriosGit/Modelado2024/ProyectosVivado/Apartado1/Apartado1.sim/sim_1/behav/xsim/xsim.dir/display_controller_tb_behav/webtalk/
 webtalk_register_client -client project
-webtalk_add_data -client project -key date_generated -value "Wed Jun  5 20:35:10 2024" -context "software_version_and_target_device"
+webtalk_add_data -client project -key date_generated -value "Wed Jun  5 23:39:49 2024" -context "software_version_and_target_device"
 webtalk_add_data -client project -key product_version -value "XSIM v2017.4 (64-bit)" -context "software_version_and_target_device"
 webtalk_add_data -client project -key build_version -value "2086221" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_platform -value "WIN64" -context "software_version_and_target_device"
@@ -14,7 +14,7 @@ webtalk_add_data -client project -key target_package -value "not_applicable" -co
 webtalk_add_data -client project -key target_speed -value "not_applicable" -context "software_version_and_target_device"
 webtalk_add_data -client project -key random_id -value "0cfebe0b-dc69-4b39-a703-26c1d23a656d" -context "software_version_and_target_device"
 webtalk_add_data -client project -key project_id -value "6053dfdf9a5a4cf09d132a75f0d1380b" -context "software_version_and_target_device"
-webtalk_add_data -client project -key project_iteration -value "5" -context "software_version_and_target_device"
+webtalk_add_data -client project -key project_iteration -value "8" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_name -value "Microsoft Windows 8 or later , 64-bit" -context "user_environment"
 webtalk_add_data -client project -key os_release -value "major release  (build 9200)" -context "user_environment"
 webtalk_add_data -client project -key cpu_name -value "AMD Ryzen 5 3600 6-Core Processor              " -context "user_environment"
@@ -27,7 +27,7 @@ webtalk_add_data -client xsim -key Command -value "xsim" -context "xsim\\command
 webtalk_add_data -client xsim -key trace_waveform -value "true" -context "xsim\\usage"
 webtalk_add_data -client xsim -key runtime -value "5024730 ns" -context "xsim\\usage"
 webtalk_add_data -client xsim -key iteration -value "0" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Time -value "0.53_sec" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Memory -value "16240_KB" -context "xsim\\usage"
-webtalk_transmit -clientid 1622174105 -regid "" -xml V:/Programacion/RepositoriosGit/Modelado2024/ProyectosVivado/Apartado1/Apartado1.sim/sim_1/behav/xsim/xsim.dir/display_controller_tb_behav/webtalk/usage_statistics_ext_xsim.xml -html V:/Programacion/RepositoriosGit/Modelado2024/ProyectosVivado/Apartado1/Apartado1.sim/sim_1/behav/xsim/xsim.dir/display_controller_tb_behav/webtalk/usage_statistics_ext_xsim.html -wdm V:/Programacion/RepositoriosGit/Modelado2024/ProyectosVivado/Apartado1/Apartado1.sim/sim_1/behav/xsim/xsim.dir/display_controller_tb_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
+webtalk_add_data -client xsim -key Simulation_Time -value "0.51_sec" -context "xsim\\usage"
+webtalk_add_data -client xsim -key Simulation_Memory -value "16248_KB" -context "xsim\\usage"
+webtalk_transmit -clientid 1807386988 -regid "" -xml V:/Programacion/RepositoriosGit/Modelado2024/ProyectosVivado/Apartado1/Apartado1.sim/sim_1/behav/xsim/xsim.dir/display_controller_tb_behav/webtalk/usage_statistics_ext_xsim.xml -html V:/Programacion/RepositoriosGit/Modelado2024/ProyectosVivado/Apartado1/Apartado1.sim/sim_1/behav/xsim/xsim.dir/display_controller_tb_behav/webtalk/usage_statistics_ext_xsim.html -wdm V:/Programacion/RepositoriosGit/Modelado2024/ProyectosVivado/Apartado1/Apartado1.sim/sim_1/behav/xsim/xsim.dir/display_controller_tb_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
 webtalk_terminate
