@@ -1,0 +1,9 @@
+0.6
+2017.4
+Dec 15 2017
+21:07:18
+V:/Programacion/RepositoriosGit/Modelado2024/PracticaLibre/Apartado1/display.vhd,1716906996,vhdl,V:/Programacion/RepositoriosGit/Modelado2024/PracticaLibre/Apartado4/top_system_tb.vhd,,,display,,,,,,,,
+V:/Programacion/RepositoriosGit/Modelado2024/PracticaLibre/Apartado2/spi_device.vhd,1716906996,vhdl,V:/Programacion/RepositoriosGit/Modelado2024/PracticaLibre/Apartado4/top_system_tb.vhd,,,spi_device,,,,,,,,
+V:/Programacion/RepositoriosGit/Modelado2024/PracticaLibre/Apartado3/pc_tx.vhd,1717619185,vhdl,V:/Programacion/RepositoriosGit/Modelado2024/PracticaLibre/Apartado4/top_system_tb.vhd,,,pc_tx,,,,,,,,
+V:/Programacion/RepositoriosGit/Modelado2024/PracticaLibre/Apartado4/top_system_tb.vhd,1716906996,vhdl,,,,top_system_tb,,,,,,,,
+V:/Programacion/RepositoriosGit/Modelado2024/ProyectosVivado/Apartado4/Apartado4.sim/sim_1/impl/timing/xsim/top_system_tb_time_impl.v,1717620732,verilog,V:/Programacion/RepositoriosGit/Modelado2024/PracticaLibre/Apartado4/top_system_tb.vhd,,,display_controller;glbl;oled_controller;receiver;spi_controller;top_system,,,,,,,,

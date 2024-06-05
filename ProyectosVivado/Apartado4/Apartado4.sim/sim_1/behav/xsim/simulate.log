@@ -1,0 +1,5 @@
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+Failure: FIN CONTROLADO DE LA SIMULACION
+Time: 1852508282 ps  Iteration: 0  Process: /top_system_tb/u_PC_tx/line__35  File: V:/Programacion/RepositoriosGit/Modelado2024/PracticaLibre/Apartado3/pc_tx.vhd
+$finish called at time : 1852508282 ps : File "V:/Programacion/RepositoriosGit/Modelado2024/PracticaLibre/Apartado3/pc_tx.vhd" Line 81
