@@ -37,10 +37,12 @@ begin
       -- Se resetea el registro
       D_C <= '0';
       RegOut <= "00000000";
-    elsif (CLK'event and CLK = '1') and (DATA_SPI_OK = '1') then
-      -- Hacemos que el registro funcione, ya que ambas se?ales estan activas
-      D_C <= DATA_SPI(8); -- Es el primer bit de la entrada DATA_SPI
-      RegOut <= DATA_SPI(7 downto 0); -- Es el resto de bits de la entrada DATA_SPI
+    elsif (CLK'event and CLK = '1') then
+      if DATA_SPI_OK = '1' then
+        -- Hacemos que el registro funcione, ya que ambas sennales estan activas
+        D_C <= DATA_SPI(8); -- Es el primer bit de la entrada DATA_SPI
+        RegOut <= DATA_SPI(7 downto 0); -- Es el resto de bits de la entrada DATA_SPI
+      end if;
     end if;
   end process;
 
@@ -101,23 +103,25 @@ begin
   
 
 
-  process(BUSY, CLK, RST,FC) -- Proceso que modela el Prescaler, nuestro valor de N1 es 28
+  process(BUSY, CLK, RST, FC) -- Proceso que modela el Prescaler, nuestro valor de N1 es 28
   begin
     if RST = '1' then
       CntReg <= 0;
       FC <= '0';
-    elsif (CLK'event and CLK = '1') and (BUSY = '1') then
-      -- Se verifica que hay sennal de reloj y que el sistema esta transmitiendo un dato
-      if CntReg = N1 - 1 then
-        -- Verificamos que se ha llegado a fin de cuenta
-        CntReg <= 0;
-        FC <= '1';
-      else
-        -- Verificamos que no se ha llegado al fin de cuenta
-        CntReg <= CntReg + 1;
-        FC <= '0';
+    elsif (CLK'event and CLK = '1') then
+      if BUSY = '1' then
+        -- Se verifica que hay sennal de reloj y que el sistema esta transmitiendo un dato
+        if CntReg = N1 - 1 then
+          -- Verificamos que se ha llegado a fin de cuenta
+          CntReg <= 0;
+          FC <= '1';
+        else
+          -- Verificamos que no se ha llegado al fin de cuenta
+          CntReg <= CntReg + 1;
+          FC <= '0';
+        end if;
+        ultFC <= FC;
       end if;
-      ultFC <= FC;
     end if;
     
   end process;
@@ -169,7 +173,7 @@ begin
     CS <= not BUSY;
   end process;
 
-  process(CntOut,CntOut_Out) -- Proceso que modela el circuito combinacional que define END_SPI
+  process(CntOut, CntOut_Out) -- Proceso que modela el circuito combinacional que define END_SPI
   begin
     if CntOut_Out = "0000" and CntOut /="0000"  then
       END_SPI <= '1';

@@ -106,9 +106,11 @@ begin
   begin
     if RST = '1' then
       RDM_Out <= (others => '0');
-    elsif (CLK'event and CLK = '1') and (PR_FC ='1') then
-      -- Cada ciclo de reloj cogemos una muestra de RX, y como empezamos con el bit de menor peso, desplazamos de der a izq
-      RDM_Out <= RX & RDM_Out(14 downto 1);
+    elsif (CLK'event and CLK = '1') then
+      if PR_FC = '1' then
+        -- Cada ciclo de reloj cogemos una muestra de RX, y como empezamos con el bit de menor peso, desplazamos de der a izq
+        RDM_Out <= RX & RDM_Out(14 downto 1);
+      end if;
     end if;
   end process;
 
@@ -161,7 +163,7 @@ begin
       end if; 
     end loop;
     
-    if aux_par=RDB_Out(9) and RDB_Out(0) = '0' and RDB_Out(10) = '1' then
+    if aux_par = RDB_Out(9) and RDB_Out(0) = '0' and RDB_Out(10) = '1' then
       Val_Out <= '1';
     else 
       Val_Out <= '0';
