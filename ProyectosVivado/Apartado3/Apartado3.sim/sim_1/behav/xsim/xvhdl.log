@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "V:/Programacion/RepositoriosGit/Modelado2024/PracticaLibre/Apartado3/pc_tx.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity pc_tx
+INFO: [VRFC 10-163] Analyzing VHDL file "V:/Programacion/RepositoriosGit/Modelado2024/PracticaLibre/Apartado3/receiver_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity receiver_tb

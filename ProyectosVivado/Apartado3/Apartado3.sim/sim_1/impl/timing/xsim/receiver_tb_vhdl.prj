@@ -1,0 +1,8 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../../../PracticaLibre/Apartado3/pc_tx.vhd" \
+"../../../../../../../PracticaLibre/Apartado3/receiver.vhd" \
+"../../../../../../../PracticaLibre/Apartado3/receiver_tb.vhd" \
+
+# Do not sort compile order
+nosort
