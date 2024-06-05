@@ -31,13 +31,13 @@ signal SCLK_Out   : std_logic; -- Sennal SCLK
 signal CntOut_Out : unsigned(3 downto 0); -- Sennal auxiliar a CntOut
 
 begin
-  process(DATA_SPI, DATA_SPI_OK, CLK,RST) -- Prcoeso del Registro (creo que es un biestable D)
+  process(DATA_SPI, DATA_SPI_OK, CLK, RST) -- Prcoeso del Registro (creo que es un biestable D)
   begin
     if RST = '1' then
       -- Se resetea el registro
       D_C <= '0';
       RegOut <= "00000000";
-    elsif (CLK'event and CLK = '1') then
+    elsif CLK'event and CLK = '1' then
       if DATA_SPI_OK = '1' then
         -- Hacemos que el registro funcione, ya que ambas sennales estan activas
         D_C <= DATA_SPI(8); -- Es el primer bit de la entrada DATA_SPI
@@ -75,7 +75,7 @@ begin
   begin
     if RST = '1' then
       SDIN <= '0';
-    elsif (CLK'event and CLK = '1') then
+    elsif CLK'event and CLK = '1' then
       if CntOut /= "0000" then
         SDIN <= MuxOut;
       else
@@ -108,7 +108,7 @@ begin
     if RST = '1' then
       CntReg <= 0;
       FC <= '0';
-    elsif (CLK'event and CLK = '1') then
+    elsif CLK'event and CLK = '1' then
       if BUSY = '1' then
         -- Se verifica que hay sennal de reloj y que el sistema esta transmitiendo un dato
         if CntReg = N1 - 1 then
@@ -160,7 +160,7 @@ begin
     elsif CLK'event and CLK = '1' then
       if DATA_SPI_OK = '1' then
         BUSY <= '1';
-      elsif CE= '1' and CntOut = "0000"then
+      elsif CE = '1' and CntOut = "0000"then
         BUSY <= '0';
       end if;
     end if;   
@@ -175,7 +175,7 @@ begin
 
   process(CntOut, CntOut_Out) -- Proceso que modela el circuito combinacional que define END_SPI
   begin
-    if CntOut_Out = "0000" and CntOut /="0000"  then
+    if CntOut_Out = "0000" and CntOut /= "0000"  then
       END_SPI <= '1';
     else
       END_SPI <= '0';
